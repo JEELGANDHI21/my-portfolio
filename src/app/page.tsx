@@ -109,7 +109,7 @@ const Home = () => {
         >
           <h1 className="text-5xl font-bold">Jeel Gandhi</h1>
           <p className="text-xl text-gray-500 mt-2">
-            I'm a{" "}
+            I am a{" "}
             <span className="text-blue-500">
               <ReactTyped
                 strings={[
