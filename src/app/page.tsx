@@ -1,101 +1,168 @@
-import Image from "next/image";
+"use client";
+import React from "react";
+import {
+  FaHome,
+  FaUser,
+  FaGraduationCap,
+  FaBriefcase,
+  FaAward,
+  FaEnvelope,
+  FaFileAlt,
+} from "react-icons/fa";
+import { ReactTyped } from "react-typed";
 
-export default function Home() {
+const Home = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="flex min-h-screen bg-gray-100 text-gray-900">
+      {/* Sidebar */}
+      <aside className="fixed left-2 top-1/2 transform -translate-y-1/2 flex flex-col items-start space-y-4">
+        <a
+          href="#home"
+          className="group flex items-center justify-start p-2 rounded-full transition-all transform group-hover:scale-110 hover:bg-gray-300"
+        >
+          <div className="bg-gray-300 p-2 rounded-full inline-flex items-center justify-center">
+            <FaHome size={24} className="text-gray-700" />
+          </div>
+          <span className=" text-gray-800 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            Home
+          </span>
+        </a>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+        <a
+          href="#about"
+          className="group flex items-center justify-start p-2 rounded-full transition-all transform group-hover:scale-110 hover:bg-gray-300"
+        >
+          <div className="bg-gray-300 p-2 rounded-full inline-flex items-center justify-center">
+            <FaUser size={24} className="text-gray-700" />
+          </div>
+          <span className=" text-gray-800 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            About
+          </span>
+        </a>
+
+        <a
+          href="#education"
+          className="group flex items-center justify-start p-2 rounded-full transition-all transform group-hover:scale-110 hover:bg-gray-300"
+        >
+          <div className="bg-gray-300 p-2 rounded-full inline-flex items-center justify-center">
+            <FaGraduationCap size={24} className="text-gray-700" />
+          </div>
+          <span className=" text-gray-800 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            Education
+          </span>
+        </a>
+
+        <a
+          href="#experience"
+          className="group flex items-center justify-start p-2 rounded-full transition-all transform group-hover:scale-110 hover:bg-gray-300"
+        >
+          <div className="bg-gray-300 p-2 rounded-full inline-flex items-center justify-center">
+            <FaBriefcase size={24} className="text-gray-700" />
+          </div>
+          <span className=" text-gray-800 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            Experience
+          </span>
+        </a>
+
+        <a
+          href="#awards"
+          className="group flex items-center justify-start p-2 rounded-full transition-all transform group-hover:scale-110 hover:bg-gray-300"
+        >
+          <div className="bg-gray-300 p-2 rounded-full inline-flex items-center justify-center">
+            <FaAward size={24} className="text-gray-700" />
+          </div>
+          <span className=" text-gray-800 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            Awards
+          </span>
+        </a>
+
+        <a
+          href="#contact"
+          className="group flex items-center justify-start p-2 rounded-full transition-all transform group-hover:scale-110 hover:bg-gray-300"
+        >
+          <div className="bg-gray-300 p-2 rounded-full inline-flex items-center justify-center">
+            <FaEnvelope size={24} className="text-gray-700" />
+          </div>
+          <span className=" text-gray-800 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            Contact
+          </span>
+        </a>
+
+        <a
+          href="#resume"
+          className="group flex items-center justify-start p-2 rounded-full transition-all transform group-hover:scale-110 hover:bg-gray-300"
+        >
+          <div className="bg-gray-300 p-2 rounded-full inline-flex items-center justify-center">
+            <FaFileAlt size={24} className="text-gray-700" />
+          </div>
+          <span className=" text-gray-800 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            Resume
+          </span>
+        </a>
+      </aside>
+
+      {/* Content */}
+      <main className="ml-20 flex-1 p-10">
+        <section
+          id="home"
+          className="h-screen flex flex-col justify-center items-center text-center"
+        >
+          <h1 className="text-5xl font-bold">Jeel Gandhi</h1>
+          <p className="text-xl text-gray-500 mt-2">
+            I'm a{" "}
+            <span className="text-blue-500">
+              <ReactTyped
+                strings={[
+                  "Software Developer",
+                  "Full Stack Developer",
+                  "AI/ML Enthusiast",
+                ]}
+                typeSpeed={60}
+                backSpeed={50}
+                backDelay={1000}
+                loop
+              />
+            </span>
+          </p>
+        </section>
+
+        <section id="about" className="p-10">
+          <h2 className="text-3xl font-bold">About Me</h2>
+          <p className="text-gray-600 mt-2">
+            I am a software engineer specializing in web development...
+          </p>
+        </section>
+
+        <section id="skills" className="p-10 bg-gray-50">
+          <h2 className="text-3xl font-bold">Skills</h2>
+          <ul className="list-disc ml-6 text-gray-600 mt-2">
+            <li>React & Next.js</li>
+            <li>Node.js & Express</li>
+            <li>MongoDB & PostgreSQL</li>
+          </ul>
+        </section>
+
+        <section id="experience" className="p-10">
+          <h2 className="text-3xl font-bold">Experience</h2>
+          <p className="text-gray-600 mt-2">
+            [Your job experience details here]
+          </p>
+        </section>
+
+        <section id="accomplishments" className="p-10 bg-gray-50">
+          <h2 className="text-3xl font-bold">Accomplishments</h2>
+          <p className="text-gray-600 mt-2">
+            [Certifications, projects, awards]
+          </p>
+        </section>
+
+        <section id="contact" className="p-10">
+          <h2 className="text-3xl font-bold">Contact</h2>
+          <p className="text-gray-600 mt-2">Email: your@email.com</p>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
-}
+};
+
+export default Home;
