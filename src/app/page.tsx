@@ -8,10 +8,13 @@ import {
   FaAward,
   FaEnvelope,
   FaFileAlt,
+  FaInstagram,
+  FaLinkedinIn,
 } from "react-icons/fa";
 import { ReactTyped } from "react-typed";
 import profilePic from "../assets/Profile.jpeg";
 import Image from "next/image";
+import { FaGithub } from "react-icons/fa6";
 
 const Home = () => {
   return (
@@ -65,7 +68,6 @@ const Home = () => {
             Experience
           </span>
         </a>
-
         <a
           href="#awards"
           className="group flex items-center justify-start p-2 rounded-full transition-all transform group-hover:scale-110 hover:bg-gray-300"
@@ -103,130 +105,6 @@ const Home = () => {
         </a>
       </aside>
 
-      {/* Content */}
-      {/* <main className="ml-20 flex-1 p-10">
-        <section
-          id="home"
-          className="h-screen flex flex-col justify-center items-center text-center"
-        >
-          <h1 className="text-5xl font-bold">Jeel Gandhi</h1>
-          <p className="text-xl text-gray-500 mt-2">
-            I&apos;m a{" "}
-            <span className="text-blue-500">
-              <ReactTyped
-                strings={[
-                  "Software Developer",
-                  "Full Stack Developer",
-                  "AI/ML Enthusiast",
-                ]}
-                typeSpeed={60}
-                backSpeed={50}
-                backDelay={1000}
-                loop
-              />
-            </span>
-          </p>
-        </section>
-
-        <section id="about" className="p-10">
-          <div className="container mx-auto p-4">
-            <div className="max-w-3xl mx-auto">
-              <h1 className="text-3xl font-bold mb-4 items-center">About Me</h1>
-
-              <p className="text-lg mb-4">
-                I am passionate tech-enthusiast with a &apos;can-do&apos;
-                attitude. Have a willingness to explore new languages, tools,
-                and emerging technologies. Full-Stack and AI/ML Developer with
-                passion for building innovative solutions that have real impact.
-                While being oriented toward personal growth, I am exploring ways
-                to integrate models of generative AI or create the most
-                cutting-edge web application. Let&apos;s collaborate and turn
-                ideas into reality!
-              </p>
-              <div className="flex items-center space-x-6 mb-4">
-                <Image
-                  src={profilePic}
-                  alt="Your Name"
-                  width={200}
-                  height={200}
-                  className="rounded-full"
-                />
-
-                <div>
-                  <h2 className="text-2xl font-bold mb-2">
-                    Full Stack Developer & AI/ML Enthusiast
-                  </h2>
-                  <div className="mb-4">
-                    <p>
-                      <strong>Highest Education:</strong> Master of Science
-                    </p>
-                    <p>
-                      <strong>City:</strong> Bellevue, WA
-                    </p>
-                    <p>
-                      <strong>Majors:</strong> Computer Science
-                    </p>
-                    <p>
-                      <strong>Email:</strong>{" "}
-                      <a
-                        href="mailto:anything@harshnagoriya.info"
-                        className="text-blue-500"
-                      >
-                        anything@harshnagoriya.info
-                      </a>
-                    </p>
-                  </div>
-
-                  <ul className="list-disc pl-6 space-y-2">
-                    <li>
-                      Demonstrated expertise in backend development, utilizing
-                      Python and Java to create and optimize API endpoints.
-                    </li>
-                    <li>
-                      Proficient in implementing scalable cloud solutions...
-                    </li>
-                    <li>
-                      Familiarity with Agile methodologies and CI/CD pipelines.
-                    </li>
-                    <li>
-                      Proven track record in Software Development Engineer in
-                      Test...
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="skills" className="p-10 bg-gray-50">
-          <h2 className="text-3xl font-bold">Skills</h2>
-          <ul className="list-disc ml-6 text-gray-600 mt-2">
-            <li>React & Next.js</li>
-            <li>Node.js & Express</li>
-            <li>MongoDB & PostgreSQL</li>
-          </ul>
-        </section>
-
-        <section id="experience" className="p-10">
-          <h2 className="text-3xl font-bold">Experience</h2>
-          <p className="text-gray-600 mt-2">
-            [Your job experience details here]
-          </p>
-        </section>
-
-        <section id="accomplishments" className="p-10 bg-gray-50">
-          <h2 className="text-3xl font-bold">Accomplishments</h2>
-          <p className="text-gray-600 mt-2">
-            [Certifications, projects, awards]
-          </p>
-        </section>
-
-        <section id="contact" className="p-10">
-          <h2 className="text-3xl font-bold">Contact</h2>
-          <p className="text-gray-600 mt-2">Email: your@email.com</p>
-        </section>
-      </main> */}
       <main className="flex-1 flex justify-center ml-20 p-10">
         <div className="w-full space-y-44">
           <section
@@ -249,6 +127,40 @@ const Home = () => {
                 />
               </span>
             </p>
+            <div className="mt-4 flex space-x-6">
+              
+              <a
+                href="https://www.linkedin.com/in/jeel-gandhi-71800624b/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedinIn
+                  size={20}
+                  className="text-gray-700 hover:text-blue-500 transition-colors"
+                />
+              </a>
+
+              <a
+                href="https://github.com/JEELGANDHI21"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub
+                  size={20}
+                  className="text-gray-700 hover:text-blue-500 transition-colors"
+                />
+              </a>
+              <a
+                href="https://www.instagram.com/jeel._.gandhi/#"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaInstagram
+                  size={20}
+                  className="text-gray-700 hover:text-blue-500 transition-colors"
+                />
+              </a>
+            </div>
           </section>
 
           {/* About Section */}
