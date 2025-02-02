@@ -417,9 +417,9 @@ const Home = () => {
             </div>
           </section>
 
-          {/* Experience Section */}
+          
           <section
-            id="skills"
+            id="Projects"
             className="p-10 md:p-30 flex flex-col justify-between"
           >
             <div className="flex flex-col items-center">
