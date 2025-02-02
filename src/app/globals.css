@@ -24,23 +24,3 @@ html {
   scroll-behavior: smooth;
 }
 
-.relative {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease-in-out;
-}
-
-.relative:hover {
-  transform: scale(1.05);
-}
-
-.relative .absolute {
-  visibility: hidden;
-}
-
-.relative:hover .absolute {
-  visibility: visible;
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
-}

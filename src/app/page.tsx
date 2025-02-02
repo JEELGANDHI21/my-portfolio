@@ -152,24 +152,26 @@ const Home = () => {
             {/* Responsive Flex Layout for Image and Text */}
             <div className="flex flex-col md:flex-row items-center justify-center md:space-x-4">
               {/* Profile Image */}
-              <div className="flex justify-center mb-6 md:mb-0 md:mr-10 md:-mt-0">
-                <div className="w-[400px] h-[400px] md:w-[450px] md:h-[450px]  flex items-center justify-center">
-                  {/* Outer Circle Borders - Always Visible */}
-                  <div className="inset-0 flex items-center justify-center pointer-events-none">
-                    <div className="absolute md:left-40 -left-8 w-[460px] h-[460px] md:w-[510px] md:h-[510px] rounded-full border border-[#fd8439]" />
-                    <div className="absolute md:left-44 -left-4 w-[430px] h-[430px] md:w-[480px] md:h-[480px] rounded-full border-2 border-[#fd8439]" />
-                    <div className="absolute md:left-48  left-0 w-[400px] h-[400px] md:w-[450px] md:h-[450px] rounded-full border-2 border-[#fd8439]" />
-                    <div className="absolute md:left-52 left-4 w-[370px] h-[370px] md:w-[420px] md:h-[420px] rounded-full border-4 border-[#fd8439]" />
-                    <div className="absolute md:left-56  left-8 w-[340px] h-[340px] md:w-[390px] md:h-[390px] rounded-full border-4 border-[#fd8439]" />
-                    <div className="absolute md:left-60 left-12 w-[310px] h-[310px] md:w-[360px] md:h-[360px] rounded-full border-4 border-[#fd8439]" />
+              <div className="relative flex justify-center mb-6 md:mb-0 md:mr-10">
+                <div className="relative w-[400px] h-[400px] md:w-[450px] md:h-[450px] flex items-center justify-center">
+                  {/* Outer Circle Borders - Always Centered */}
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div className="absolute w-[460px] h-[460px] md:w-[510px] md:h-[510px] rounded-full border border-[#fd8439]" />
+                    <div className="absolute w-[430px] h-[430px] md:w-[480px] md:h-[480px] rounded-full border-2 border-[#fd8439]" />
+                    <div className="absolute w-[400px] h-[400px] md:w-[450px] md:h-[450px] rounded-full border-2 border-[#fd8439]" />
+                    <div className="absolute w-[370px] h-[370px] md:w-[420px] md:h-[420px] rounded-full border-4 border-[#fd8439]" />
+                    <div className="absolute w-[340px] h-[340px] md:w-[390px] md:h-[390px] rounded-full border-4 border-[#fd8439]" />
+                    <div className="absolute w-[310px] h-[310px] md:w-[360px] md:h-[360px] rounded-full border-4 border-[#fd8439]" />
                   </div>
 
                   {/* Profile Picture */}
-                  <Image
-                    src={profilePic}
-                    alt="Your Name"
-                    className="rounded-full object-cover w-72 h-72 md:w-80 md:h-80"
-                  />
+                  <div className="relative z-10">
+                    <Image
+                      src={profilePic}
+                      alt="Your Name"
+                      className="rounded-full object-cover w-72 h-72 md:w-80 md:h-80"
+                    />
+                  </div>
                 </div>
               </div>
 
