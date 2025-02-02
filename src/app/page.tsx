@@ -73,7 +73,7 @@ const Home = () => {
         />
         <NavItem href="#skills" icon={<FaBrain size={20} />} text="Skills" />
         <NavItem
-          href="#project"
+          href="#Projects"
           icon={<FaBriefcase size={20} />}
           text="Projects"
         />
