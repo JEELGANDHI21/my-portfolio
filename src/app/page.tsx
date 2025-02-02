@@ -61,7 +61,9 @@ const Home = () => {
       <aside
         className={`fixed md:left-0  top-1/2 transform -translate-y-1/2 flex flex-col items-start space-y-4 w-16
           transition-all duration-300 md:flex ${
-            isOpen ? "translate-x-0 " : "-translate-x-full md:translate-x-0 -left-11"
+            isOpen
+              ? "translate-x-0 "
+              : "-translate-x-full md:translate-x-0 -left-11"
           }`}
       >
         <NavItem href="#home" icon={<FaHome size={20} />} text="Home" />
@@ -73,7 +75,7 @@ const Home = () => {
         />
         <NavItem href="#skills" icon={<FaBrain size={20} />} text="Skills" />
         <NavItem
-          href="#Projects"
+          href="projects"
           icon={<FaBriefcase size={20} />}
           text="Projects"
         />
@@ -150,24 +152,27 @@ const Home = () => {
             {/* Responsive Flex Layout for Image and Text */}
             <div className="flex flex-col md:flex-row items-center justify-center md:space-x-4">
               {/* Profile Image */}
-              <div className="relative flex justify-center mb-6 md:mb-0 md:mr-10 md:-mt-0">
-                <div className="w-[400px] h-[400px] md:w-[450px] md:h-[450px] relative">
-                  {/* Outer Circle Borders */}
-                  <div className="w-[460px] h-[460px] md:w-[510px] md:h-[510px] left-[-55px] top-[-55px] absolute rounded-full border border-[#fd8439]" />
-                  <div className="w-[430px] h-[430px] md:w-[480px] md:h-[480px] left-[-40px] top-[-40px] absolute rounded-full border-2 border-[#fd8439]" />
-                  <div className="w-[400px] h-[400px] md:w-[450px] md:h-[450px] left-[-20px] top-[-20px] absolute rounded-full border-2 border-[#fd8439]" />
-                  <div className="w-[370px] h-[370px] md:w-[420px] md:h-[420px] left-[0px] top-[0px] absolute rounded-full border-4 border-[#fd8439]" />
-                  <div className="w-[340px] h-[340px] md:w-[390px] md:h-[390px] left-[20px] top-[20px] absolute rounded-full border-4 border-[#fd8439]" />
-                  <div className="w-[310px] h-[310px] md:w-[360px] md:h-[360px] left-[40px] top-[40px] absolute rounded-full border-4 border-[#fd8439]" />
+              <div className="flex justify-center mb-6 md:mb-0 md:mr-10 md:-mt-0">
+                <div className="w-[400px] h-[400px] md:w-[450px] md:h-[450px]  flex items-center justify-center">
+                  {/* Outer Circle Borders - Always Visible */}
+                  <div className="inset-0 flex items-center justify-center pointer-events-none">
+                    <div className="absolute md:left-40 -left-8 w-[460px] h-[460px] md:w-[510px] md:h-[510px] rounded-full border border-[#fd8439]" />
+                    <div className="absolute md:left-44 -left-4 w-[430px] h-[430px] md:w-[480px] md:h-[480px] rounded-full border-2 border-[#fd8439]" />
+                    <div className="absolute md:left-48  left-0 w-[400px] h-[400px] md:w-[450px] md:h-[450px] rounded-full border-2 border-[#fd8439]" />
+                    <div className="absolute md:left-52 left-4 w-[370px] h-[370px] md:w-[420px] md:h-[420px] rounded-full border-4 border-[#fd8439]" />
+                    <div className="absolute md:left-56  left-8 w-[340px] h-[340px] md:w-[390px] md:h-[390px] rounded-full border-4 border-[#fd8439]" />
+                    <div className="absolute md:left-60 left-12 w-[310px] h-[310px] md:w-[360px] md:h-[360px] rounded-full border-4 border-[#fd8439]" />
+                  </div>
 
                   {/* Profile Picture */}
                   <Image
                     src={profilePic}
                     alt="Your Name"
-                    className="rounded-full object-cover w-72 h-72 md:w-80 md:h-80 mb-2"
+                    className="rounded-full object-cover w-72 h-72 md:w-80 md:h-80"
                   />
                 </div>
               </div>
+
               {/* Text Section */}
               <div className="text-center md:text-left mt-4 md:-mt-8 md:ml-10">
                 <h2 className="text-2xl font-bold mb-4">
@@ -417,9 +422,8 @@ const Home = () => {
             </div>
           </section>
 
-          
           <section
-            id="Projects"
+            id="projects"
             className="p-10 md:p-30 flex flex-col justify-between"
           >
             <div className="flex flex-col items-center">
