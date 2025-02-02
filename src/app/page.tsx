@@ -1,6 +1,5 @@
 "use client";
-import React, { JSX } from "react";
-import { useState } from "react";
+import React, { JSX, useState } from "react";
 import {
   FaHome,
   FaUser,
@@ -12,11 +11,38 @@ import {
   FaInstagram,
   FaLinkedinIn,
   FaBars,
+  FaBrain,
+  FaTimes,
 } from "react-icons/fa";
 import { ReactTyped } from "react-typed";
-import profilePic from "../assets/Profile.jpeg";
+import {
+  JavascriptOriginal,
+  JavaOriginal,
+  GitOriginal,
+  DockerOriginal,
+  KubernetesOriginal,
+  GithubOriginal,
+  AmazonwebservicesOriginalWordmark,
+  CsharpOriginal,
+  SpringOriginal,
+  CplusplusOriginal,
+  PythonOriginal,
+  ReactOriginal,
+  NodejsOriginal,
+  ExpressOriginal,
+  MongodbOriginal,
+  MysqlOriginal,
+  PostgresqlOriginal,
+  NextjsOriginal,
+  PostmanOriginal,
+  DotNetOriginal,
+} from "devicons-react";
 import Image from "next/image";
+import profilePic from "../assets/Profile.jpeg";
 import dduPic from "../assets/ddu.png";
+import BuyNSellHub from "../assets/BuyNSellHub.png";
+import WPA from "../assets/WPA.jpg";
+import FSD from "../assets/FSD.png";
 import { FaGithub } from "react-icons/fa6";
 
 const Home = () => {
@@ -25,36 +51,44 @@ const Home = () => {
   return (
     <div className="flex min-h-screen bg-gray-100 text-gray-900">
       {/* Sidebar */}
-
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="md:hidden fixed top-4 right-4 z-50 p-2 bg-gray-800 text-white rounded-full"
       >
-        <FaBars size={24} />
+        {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
       </button>
 
-      {/* Sidebar */}
       <aside
-        className={`fixed left-0 top-1/2 transform -translate-y-1/2 flex flex-col items-start space-y-4 w-16
-  transition-all duration-300 md:flex ${
-    isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
-  }`}
+        className={`fixed md:left-0  top-1/2 transform -translate-y-1/2 flex flex-col items-start space-y-4 w-16
+          transition-all duration-300 md:flex ${
+            isOpen ? "translate-x-0 " : "-translate-x-full md:translate-x-0 -left-11"
+          }`}
       >
-        <NavItem href="#home" icon={<FaHome />} text="Home" />
-        <NavItem href="#about" icon={<FaUser />} text="About" />
+        <NavItem href="#home" icon={<FaHome size={20} />} text="Home" />
+        <NavItem href="#about" icon={<FaUser size={20} />} text="About" />
         <NavItem
           href="#education"
-          icon={<FaGraduationCap />}
+          icon={<FaGraduationCap size={20} />}
           text="Education"
         />
-        <NavItem href="#experience" icon={<FaBriefcase />} text="Experience" />
-        <NavItem href="#awards" icon={<FaAward />} text="Awards" />
-        <NavItem href="#contact" icon={<FaEnvelope />} text="Contact" />
-        <NavItem href="#resume" icon={<FaFileAlt />} text="Resume" />
+        <NavItem href="#skills" icon={<FaBrain size={20} />} text="Skills" />
+        <NavItem
+          href="#project"
+          icon={<FaBriefcase size={20} />}
+          text="Projects"
+        />
+        <NavItem href="#awards" icon={<FaAward size={20} />} text="Awards" />
+        <NavItem
+          href="#contact"
+          icon={<FaEnvelope size={20} />}
+          text="Contact"
+        />
+        <NavItem href="#resume" icon={<FaFileAlt size={20} />} text="Resume" />
       </aside>
 
       <main className="flex-1 flex justify-center md:ml-20 ml-4 px-4 md:px-0 overflow-x-hidden">
-        <div className="w-full space-y-32">
+        <div className="w-full space-y-8">
+          {/* Home Section */}
           <section
             id="home"
             className="h-screen flex flex-col justify-center items-start text-left px-10 md:items-center md:text-center md:px-20 transition-all"
@@ -94,10 +128,9 @@ const Home = () => {
           </section>
 
           {/* About Section */}
-
           <section
             id="about"
-            className="p-10 md:p-30 min-h-screen flex flex-col justify-between"
+            className="p-10 md:p-30 flex flex-col justify-between"
           >
             <div className="flex flex-col items-center">
               <h1 className="text-3xl font-bold text-center mb-6">About Me</h1>
@@ -166,9 +199,10 @@ const Home = () => {
             </div>
           </section>
 
+          {/* Education Section */}
           <section
             id="education"
-            className="p-10 md:p-30 min-h-screen flex flex-col justify-between"
+            className="p-10 md:p-30 flex flex-col justify-between"
           >
             <div className="flex flex-col items-center">
               <h1 className="text-3xl font-bold text-center mb-6">Education</h1>
@@ -185,7 +219,7 @@ const Home = () => {
                   {/* Hover Effect for the Text Section */}
                   <div className="group hover:bg-[#fd8439] hover:opacity-80 transition-all duration-300 w-full text-center rounded-lg">
                     {/* University Name */}
-                    <h2 className="text-xl font-bold mb-2 sm:text-2xl md:text-3xl text-black   group-hover:text-white">
+                    <h2 className="text-xl font-bold mb-2 sm:text-2xl md:text-3xl text-black group-hover:text-white">
                       Dharmsinh Desai University
                     </h2>
                     <p className="text-lg font-mono text-black">
@@ -197,7 +231,7 @@ const Home = () => {
 
                     {/* What I Learned */}
                     <p className="text-gray-600 text-center sm:text-lg md:text-xl mt-4">
-                      Releveant Coursework <br />
+                      Relevant Coursework <br />
                       Data Structures and Algorithm, Machine Learning
                     </p>
                   </div>
@@ -206,95 +240,289 @@ const Home = () => {
             </div>
           </section>
 
+          {/* Skills Section */}
           <section
-            id="about"
-            className="p-10 md:p-30 h-screen flex flex-col justify-between"
+            id="skills"
+            className="p-10 md:p-30 flex flex-col justify-between"
           >
-            <div className="flex flex-col items-center mt-auto">
+            <div className="flex flex-col items-center">
               <h1 className="text-3xl font-bold text-center mb-6">Skills</h1>
-              <ul className="list-disc ml-6 text-gray-600 mt-2 text-center">
-                <li>React & Next.js</li>
-                <li>Node.js & Express</li>
-                <li>MongoDB & PostgreSQL</li>
-              </ul>
+              <hr />
+              <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-7 gap-4 mt-6">
+                {/* Skill Items */}
+                <div className="pt-2 sm:p-4 bg-white rounded-lg shadow-md text-center hover:bg-[#fd8439] hover:text-white transition-all duration-300">
+                  <div className="flex justify-center items-center">
+                    <JavascriptOriginal size={40} className="text-2xl" />
+                  </div>
+                  <span className="md:text-lg text-sm font-medium block mt-3">
+                    JavaScript
+                  </span>
+                </div>
+                <div className="pt-2 sm:p-4 bg-white rounded-lg shadow-md text-center hover:bg-[#fd8439] hover:text-white transition-all duration-300">
+                  <div className="flex justify-center items-center">
+                    <JavaOriginal size={40} className="text-2xl" />
+                  </div>
+                  <span className="md:text-lg text-sm font-medium block mt-3">
+                    Java
+                  </span>
+                </div>
+                <div className="pt-2 sm:p-4 bg-white rounded-lg shadow-md text-center hover:bg-[#fd8439] hover:text-white transition-all duration-300">
+                  <div className="flex justify-center items-center">
+                    <CplusplusOriginal size={40} className="text-2xl" />
+                  </div>
+                  <span className="md:text-lg text-sm font-medium block mt-3">
+                    C++
+                  </span>
+                </div>
+                <div className="pt-2 sm:p-4 bg-white rounded-lg shadow-md text-center hover:bg-[#fd8439] hover:text-white transition-all duration-300">
+                  <div className="flex justify-center items-center">
+                    <PythonOriginal size={40} className="text-2xl" />
+                  </div>
+                  <span className="md:text-lg text-sm font-medium block mt-3">
+                    Python
+                  </span>
+                </div>
+                <div className="pt-2 sm:p-4 bg-white rounded-lg shadow-md text-center hover:bg-[#fd8439] hover:text-white transition-all duration-300">
+                  <div className="flex justify-center items-center">
+                    <SpringOriginal size={40} className="text-2xl" />
+                  </div>
+                  <span className="md:text-lg text-sm font-medium block mt-3">
+                    SpringBoot
+                  </span>
+                </div>
+                <div className="pt-2 sm:p-4 bg-white rounded-lg shadow-md text-center hover:bg-[#fd8439] hover:text-white transition-all duration-300">
+                  <div className="flex justify-center items-center">
+                    <MysqlOriginal size={40} className="text-2xl" />
+                  </div>
+                  <span className="md:text-lg text-sm font-medium block mt-3">
+                    MySQL
+                  </span>
+                </div>
+                <div className="pt-2 sm:p-4 bg-white rounded-lg shadow-md text-center hover:bg-[#fd8439] hover:text-white transition-all duration-300">
+                  <div className="flex justify-center items-center">
+                    <PostgresqlOriginal size={40} className="text-2xl" />
+                  </div>
+                  <span className="md:text-lg text-sm font-medium block mt-3">
+                    PostgreSQL
+                  </span>
+                </div>
+                <div className="pt-2 sm:p-4 bg-white rounded-lg shadow-md text-center hover:bg-[#fd8439] hover:text-white transition-all duration-300">
+                  <div className="flex justify-center items-center">
+                    <ReactOriginal size={40} className="text-2xl" />
+                  </div>
+                  <span className="md:text-lg text-sm font-medium block mt-3">
+                    React
+                  </span>
+                </div>
+                <div className="p-2 sm:p-4 bg-white rounded-lg shadow-md text-center hover:bg-[#fd8439] hover:text-white transition-all duration-300">
+                  <div className="flex justify-center items-center">
+                    <NodejsOriginal size={40} className="text-2xl" />
+                  </div>
+                  <span className="md:text-lg text-sm font-medium block mt-3">
+                    NodeJS
+                  </span>
+                </div>
+                <div className="pt-2 sm:p-4 bg-white rounded-lg shadow-md text-center hover:bg-[#fd8439] hover:text-white transition-all duration-300">
+                  <div className="flex justify-center items-center">
+                    <ExpressOriginal size={40} className="text-2xl" />
+                  </div>
+                  <span className="md:text-lg text-sm font-medium block mt-3">
+                    ExpressJS
+                  </span>
+                </div>
+                <div className="pt-2 sm:p-4 bg-white rounded-lg shadow-md text-center hover:bg-[#fd8439] hover:text-white transition-all duration-300">
+                  <div className="flex justify-center items-center">
+                    <NextjsOriginal size={40} className="text-2xl" />
+                  </div>
+                  <span className="md:text-lg text-sm font-medium block mt-3">
+                    NextJS
+                  </span>
+                </div>
+                <div className="pt-2 sm:p-4 bg-white rounded-lg shadow-md text-center hover:bg-[#fd8439] hover:text-white transition-all duration-300">
+                  <div className="flex justify-center items-center">
+                    <MongodbOriginal size={40} className="text-2xl" />
+                  </div>
+                  <span className="md:text-lg text-sm font-medium block mt-3">
+                    MongoDB
+                  </span>
+                </div>
+                <div className="pt-2 sm:p-4 bg-white rounded-lg shadow-md text-center hover:bg-[#fd8439] hover:text-white transition-all duration-300">
+                  <div className="flex justify-center items-center">
+                    <CsharpOriginal size={40} className="text-2xl" />
+                  </div>
+                  <span className="md:text-lg text-sm font-medium block mt-3">
+                    C#
+                  </span>
+                </div>
+                <div className="pt-2 sm:p-4 bg-white rounded-lg shadow-md text-center hover:bg-[#fd8439] hover:text-white transition-all duration-300">
+                  <div className="flex justify-center items-center">
+                    <DockerOriginal size={40} className="text-2xl" />
+                  </div>
+                  <span className="md:text-lg text-sm font-medium block mt-3">
+                    Docker
+                  </span>
+                </div>
+                <div className="pt-2 sm:p-4 bg-white rounded-lg shadow-md text-center hover:bg-[#fd8439] hover:text-white transition-all duration-300">
+                  <div className="flex justify-center items-center">
+                    <KubernetesOriginal size={40} className="text-2xl" />
+                  </div>
+                  <span className="md:text-lg text-sm font-medium block mt-3">
+                    Kubernetes
+                  </span>
+                </div>
+                <div className="pt-2 sm:p-4 bg-white rounded-lg shadow-md text-center hover:bg-[#fd8439] hover:text-white transition-all duration-300">
+                  <div className="flex justify-center items-center">
+                    <GitOriginal size={40} className="text-2xl" />
+                  </div>
+                  <span className="md:text-lg text-sm font-medium block mt-3">
+                    GIT
+                  </span>
+                </div>
+                <div className="pt-2 sm:p-4 bg-white rounded-lg shadow-md text-center hover:bg-[#fd8439] hover:text-white transition-all duration-300">
+                  <div className="flex justify-center items-center">
+                    <AmazonwebservicesOriginalWordmark
+                      size={40}
+                      className="text-2xl"
+                    />
+                  </div>
+                  <span className="md:text-lg text-sm font-medium block mt-3">
+                    AWS
+                  </span>
+                </div>
+                <div className="pt-2 sm:p-4 bg-white rounded-lg shadow-md text-center hover:bg-[#fd8439] hover:text-white transition-all duration-300">
+                  <div className="flex justify-center items-center">
+                    <DotNetOriginal size={40} className="text-2xl" />
+                  </div>
+                  <span className="md:text-lg text-sm font-medium block mt-3">
+                    .NET
+                  </span>
+                </div>
+                <div className="pt-2 sm:p-4 bg-white rounded-lg shadow-md text-center hover:bg-[#fd8439] hover:text-white transition-all duration-300">
+                  <div className="flex justify-center items-center">
+                    <GithubOriginal size={40} className="text-2xl" />
+                  </div>
+                  <span className="md:text-lg text-sm font-medium block mt-3">
+                    Github
+                  </span>
+                </div>
+                <div className="pt-2 sm:p-4 bg-white rounded-lg shadow-md text-center hover:bg-[#fd8439] hover:text-white transition-all duration-300">
+                  <div className="flex justify-center items-center">
+                    <PostmanOriginal size={40} className="text-2xl" />
+                  </div>
+                  <span className="md:text-lg text-sm font-medium block mt-3">
+                    Postman
+                  </span>
+                </div>
+              </div>
             </div>
           </section>
 
-          <section id="experience" className="p-10">
-            <h2 className="text-3xl font-bold text-center">Experience</h2>
-            <p className="text-gray-600 text-center mt-2">
-              [Your job experience details here]
-            </p>
-          </section>
+          {/* Experience Section */}
+          <section
+            id="skills"
+            className="p-10 md:p-30 flex flex-col justify-between"
+          >
+            <div className="flex flex-col items-center">
+              <h1 className="text-3xl font-bold text-center mb-6">Projects</h1>
+              <hr />
+              <div className="flex flex-wrap gap-4 justify-center">
+                {/* Project 1 */}
+                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-2/5 p-[16.19px] bg-white rounded-md border-2 border-black flex flex-col justify-start items-center gap-[16.19px] group relative">
+                  <Image
+                    className="md:w-[350px] md:h-[200.81px] w-[266px] h-[159.81px] rounded-[5.15px] shadow-[0px_2.94px_0px_0px_rgba(253,132,57,1.00)] border-2"
+                    src={BuyNSellHub}
+                    alt="Project1"
+                  />
+                  <div className="flex justify-between items-center w-full px-4">
+                    <div className="text-[#0c0c0c] md:text-xl text-lg font-normal font-['Handlee'] leading-tight">
+                      BuyNSellHub
+                      <br />
+                      <p className="text-sm">
+                        Tech Stack : MERN, AWS S3, Tailwind CSS
+                      </p>
+                    </div>
+                  </div>
 
-          <section id="accomplishments" className="p-10 bg-gray-50">
-            <div className="h-[805.07px] flex-col justify-start items-start gap-4 inline-flex">
-              <div className="p-[16.19px] bg-white rounded-md border-2 border-black flex-col justify-start items-center gap-[16.19px] flex">
-                <img
-                  className="w-[266px] h-[159.81px] rounded-[5.15px] shadow-[0px_2.943765163421631px_0px_0px_rgba(243,132,212,1.00)] border-2"
-                  src="https://via.placeholder.com/266x160"
-                  alt="nothing"
-                />
-                <div className="justify-start items-end gap-[27.23px] inline-flex">
-                  <div className="text-[#0c0c0c] text-xl font-normal font-['Handlee'] leading-tight">
-                    4 style Portfolio
-                    <br />
-                    design
-                  </div>
-                  <div className="w-[104.51px] h-[49.31px] relative">
-                    <div className="w-[89.78px] h-[33.12px] pl-[13.17px] pr-[16.47px] py-[6.59px] left-[14.72px] top-[16.19px] absolute bg-[#f072cd] rounded-tl-sm rounded-tr-[19.76px] rounded-bl-[19.76px] rounded-br-[19.76px] shadow-[3.293558120727539px_3.293558120727539px_8.233894348144531px_0px_rgba(240,114,205,0.16)] border-2 border-[#db4a90] justify-start items-start gap-[6.59px] inline-flex">
-                      <div className="grow shrink basis-0 self-stretch text-white text-[13.17px] font-medium font-['Inter'] leading-tight">
-                        No-Code
-                      </div>
+                  <a
+                    href="https://github.com/JEELGANDHI21/SDP"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute right-1 bottom-1 md:bottom-4 md:right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  >
+                    <div className="w-[87px] h-[24px] md:w-[102.78px] md:h-[33px] px-[13.17px] py-[6.59px] bg-[#fd8439] rounded-tl-sm rounded-tr-[19.76px] rounded-bl-[19.76px] rounded-br-[19.76px] shadow-[3.29px_3.29px_8.23px_0px_rgba(240,114,205,0.16)] border-2 border-black flex items-center justify-center">
+                      <span className="text-white md:text-[13.17px] text-[11px] font-medium font-['Inter'] leading-tight">
+                        Source Code
+                      </span>
                     </div>
-                  </div>
+                  </a>
                 </div>
-              </div>
-              <div className="p-[16.19px] bg-white rounded-md border-2 border-black flex-col justify-start items-center gap-[16.19px] flex">
-                <img
-                  className="w-[266px] h-[159.81px] rounded-[5.15px] shadow-[0px_2.943765163421631px_0px_0px_rgba(243,132,212,1.00)] border-2"
-                  src="https://via.placeholder.com/266x160"
-                  alt="nothing"
-                />
-                <div className="justify-start items-end gap-[27.23px] inline-flex">
-                  <div className="text-[#0c0c0c] text-xl font-normal font-['Handlee'] leading-tight">
-                    4 style Portfolio
-                    <br />
-                    design
-                  </div>
-                  <div className="w-[104.51px] h-[49.31px] relative">
-                    <div className="w-[89.78px] h-[33.12px] pl-[13.17px] pr-[16.47px] py-[6.59px] left-[14.72px] top-[16.19px] absolute bg-[#5ab5e8] rounded-tl-sm rounded-tr-[19.76px] rounded-bl-[19.76px] rounded-br-[19.76px] shadow-[3.293558120727539px_3.293558120727539px_8.233894348144531px_0px_rgba(90,181,232,0.16)] border-2 border-[#1c6ab1] justify-start items-start gap-[6.59px] inline-flex">
-                      <div className="grow shrink basis-0 self-stretch text-white text-[13.17px] font-medium font-['Inter'] leading-tight">
-                        No-Code
-                      </div>
+
+                {/* Project 2 */}
+                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-2/5 p-[16.19px] bg-white rounded-md border-2 border-black flex flex-col justify-start items-center gap-[16.19px] group relative">
+                  <Image
+                    className="md:w-[350px] md:h-[200.81px] w-[266px] h-[159.81px] rounded-[5.15px] shadow-[0px_2.94px_0px_0px_rgba(253,132,57,1.00)] border-2"
+                    src={WPA}
+                    alt="Project2"
+                  />
+                  <div className="flex justify-between items-center w-full px-4">
+                    <div className="text-[#0c0c0c] md:text-xl text-lg font-normal font-['Handlee'] leading-tight">
+                      AI - Wall Paint Estimation
+                      <br />
+                      <p className="text-sm">
+                        Tech Stack : Python, Meta-SAM2, Streamlit
+                      </p>
                     </div>
                   </div>
+
+                  <a
+                    href="https://docs.google.com/document/d/1Mj_eHaayh55RxQcsra_3dPJSkq8G__T9/edit?usp=drive_link&ouid=109724698963648157939&rtpof=true&sd=true"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute right-1 bottom-1 md:bottom-4 md:right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  >
+                    <div className="w-[87px] h-[24px] md:w-[102.78px] md:h-[33px] px-[13.17px] py-[6.59px] bg-[#fd8439] rounded-tl-sm rounded-tr-[19.76px] rounded-bl-[19.76px] rounded-br-[19.76px] shadow-[3.29px_3.29px_8.23px_0px_rgba(240,114,205,0.16)] border-2 border-black flex items-center justify-center">
+                      <span className="text-white md:text-[13.17px] text-[11px] font-medium font-['Inter'] leading-tight">
+                        Source Code
+                      </span>
+                    </div>
+                  </a>
                 </div>
-              </div>
-              <div className="p-[16.19px] bg-white rounded-md border-2 border-black flex-col justify-start items-center gap-[16.19px] flex">
-                <img
-                  className="w-[266px] h-[159.81px] rounded-[5.15px] shadow-[0px_2.943765163421631px_0px_0px_rgba(243,132,212,1.00)] border-2"
-                  src="https://via.placeholder.com/266x160"
-                  alt="nothing"
-                />
-                <div className="justify-start items-end gap-[27.23px] inline-flex">
-                  <div className="text-[#0c0c0c] text-xl font-normal font-['Handlee'] leading-tight">
-                    4 style Portfolio
-                    <br />
-                    design
-                  </div>
-                  <div className="w-[104.51px] h-[49.31px] relative">
-                    <div className="w-[89.78px] h-[33.12px] pl-[13.17px] pr-[16.47px] py-[6.59px] left-[14.72px] top-[16.19px] absolute bg-[#7cf072] rounded-tl-sm rounded-tr-[19.76px] rounded-bl-[19.76px] rounded-br-[19.76px] shadow-[3.293558120727539px_3.293558120727539px_8.233894348144531px_0px_rgba(124,240,114,0.16)] border-2 border-[#4ed543] justify-start items-start gap-[6.59px] inline-flex">
-                      <div className="w-[66px] self-stretch text-white text-[13.17px] font-medium font-['Inter'] leading-tight">
-                        UI Design
-                      </div>
+
+                {/* Project 3 */}
+                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-2/5 p-[16.19px] bg-white rounded-md border-2 border-black flex flex-col justify-start items-center gap-[16.19px] group relative md:mt-3">
+                  <Image
+                    className="md:w-[350px] md:h-[200.81px] w-[266px] h-[159.81px] rounded-[5.15px] shadow-[0px_2.94px_0px_0px_rgba(253,132,57,1.00)] border-2"
+                    src={FSD}
+                    alt="Project2"
+                  />
+                  <div className="flex justify-between items-center w-full px-4">
+                    <div className="text-[#0c0c0c] md:text-xl text-lg font-normal font-['Handlee'] leading-tight">
+                      Event Management System
+                      <br />
+                      <p className="text-sm">
+                        Tech Stack : Java, SpringBoot, React, Tailwind
+                      </p>
                     </div>
                   </div>
+
+                  <a
+                    href="https://github.com/JEELGANDHI21/FSD_EVENT_MANAGEMENT"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute right-1 bottom-1 md:bottom-4 md:right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  >
+                    <div className="w-[87px] h-[24px] md:w-[102.78px] md:h-[33px] px-[13.17px] py-[6.59px] bg-[#fd8439] rounded-tl-sm rounded-tr-[19.76px] rounded-bl-[19.76px] rounded-br-[19.76px] shadow-[3.29px_3.29px_8.23px_0px_rgba(240,114,205,0.16)] border-2 border-black flex items-center justify-center">
+                      <span className="text-white md:text-[13.17px] text-[11px] font-medium font-['Inter'] leading-tight">
+                        Source Code
+                      </span>
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>
           </section>
 
+          {/* Contact Section */}
           <section id="contact" className="p-10">
             <h2 className="text-3xl font-bold text-center">Contact</h2>
             <p className="text-gray-600 text-center mt-2">
@@ -309,11 +537,28 @@ const Home = () => {
 
 export default Home;
 
+// NavItem Component
 interface NavItemProps {
   href: string;
   icon: JSX.Element;
   text: string;
 }
+
+const NavItem: React.FC<NavItemProps> = ({ href, icon, text }) => (
+  <a
+    href={href}
+    className="group flex items-center justify-start p-2 rounded-full transition-all transform hover:scale-95 hover:bg-[#fd8439] hover:opacity-80"
+  >
+    <div className="bg-white p-2 rounded-full inline-flex items-center justify-center">
+      <span className="text-[#fd8439]">{icon}</span>
+    </div>
+    <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 ml-1">
+      {text}
+    </span>
+  </a>
+);
+
+// SocialLink Component
 interface SocialLinkProps {
   href: string;
   icon: JSX.Element;
@@ -327,19 +572,5 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, icon }) => (
     className="text-gray-700 hover:text-blue-500 transition-colors"
   >
     {icon}
-  </a>
-);
-
-const NavItem: React.FC<NavItemProps> = ({ href, icon, text }) => (
-  <a
-    href={href}
-    className="group flex items-center justify-start p-2 rounded-full transition-all transform hover:scale-95  hover:bg-[#fd8439] hover:opacity-80"
-  >
-    <div className="bg-[white]  p-2 rounded-full inline-flex items-center justify-center ">
-      <span className="text-[#fd8439] ">{icon}</span>
-    </div>
-    <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 ml-1">
-      {text}
-    </span>
   </a>
 );
