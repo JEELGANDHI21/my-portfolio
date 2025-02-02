@@ -53,7 +53,7 @@ const Home = () => {
         <NavItem href="#resume" icon={<FaFileAlt />} text="Resume" />
       </aside>
 
-      <main className="flex-1 flex justify-center md:ml-20">
+      <main className="flex-1 flex justify-center md:ml-20 ml-4 px-4 md:px-0 overflow-x-hidden">
         <div className="w-full space-y-32">
           <section
             id="home"
@@ -188,15 +188,17 @@ const Home = () => {
                     <h2 className="text-xl font-bold mb-2 sm:text-2xl md:text-3xl text-black   group-hover:text-white">
                       Dharmsinh Desai University
                     </h2>
-                    <p className="text-lg font-mono text-black">Bachelor Of Technology</p>
+                    <p className="text-lg font-mono text-black">
+                      Bachelor Of Technology
+                    </p>
                     <p className="text-lg text-black">
                       (Information Technology)
                     </p>
 
                     {/* What I Learned */}
                     <p className="text-gray-600 text-center sm:text-lg md:text-xl mt-4">
-                      Releveant Coursework <br/>
-                        Data Structures and Algorithm, Machine Learning
+                      Releveant Coursework <br />
+                      Data Structures and Algorithm, Machine Learning
                     </p>
                   </div>
                 </div>
