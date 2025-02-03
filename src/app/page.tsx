@@ -43,13 +43,14 @@ import dduPic from "../assets/ddu.png";
 import BuyNSellHub from "../assets/BuyNSellHub.png";
 import WPA from "../assets/WPA.jpg";
 import FSD from "../assets/FSD.png";
+import GradientBg from "../assets/Gradient.jpg";
 import { FaGithub } from "react-icons/fa6";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex min-h-screen bg-gray-100 text-gray-900">
+    <div className="flex min-h-screen bg-black text-white ">
       {/* Sidebar */}
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -59,12 +60,12 @@ const Home = () => {
       </button>
 
       <aside
-        className={`fixed md:left-0  top-1/2 transform -translate-y-1/2 flex flex-col items-start space-y-4 w-16
-          transition-all duration-300 md:flex ${
-            isOpen
-              ? "translate-x-0 "
-              : "-translate-x-full md:translate-x-0 -left-11"
-          }`}
+        className={`fixed md:left-0 top-1/2 transform -translate-y-1/2 flex flex-col items-start space-y-4 w-16
+      transition-all duration-300 md:flex ${
+        isOpen
+          ? "translate-x-0 "
+          : "-translate-x-full md:translate-x-0 -left-11"
+      }`}
       >
         <NavItem href="#home" icon={<FaHome size={20} />} text="Home" />
         <NavItem href="#about" icon={<FaUser size={20} />} text="About" />
@@ -75,7 +76,7 @@ const Home = () => {
         />
         <NavItem href="#skills" icon={<FaBrain size={20} />} text="Skills" />
         <NavItem
-          href="projects"
+          href="#Projects"
           icon={<FaBriefcase size={20} />}
           text="Projects"
         />
@@ -88,12 +89,13 @@ const Home = () => {
         <NavItem href="#resume" icon={<FaFileAlt size={20} />} text="Resume" />
       </aside>
 
-      <main className="flex-1 flex justify-center md:ml-20 ml-4 px-4 md:px-0 overflow-x-hidden">
+      <main className="flex-1 flex flex-col justify-center items-center  md:px-0 overflow-x-hidden">
         <div className="w-full space-y-8">
-          {/* Home Section */}
+          {/* Home Section with Background Image */}
           <section
             id="home"
-            className="h-screen flex flex-col justify-center items-start text-left px-10 md:items-center md:text-center md:px-20 transition-all"
+            className="h-screen flex flex-col justify-center items-start text-left px-10 md:items-center md:text-center md:px-20 transition-all
+        bg-[url('../assets/Gradient1.png')] bg-cover bg-center bg-no-repeat"
           >
             <h1 className="text-3xl sm:text-5xl font-bold">Jeel Gandhi</h1>
             <p className="text-lg sm:text-xl text-gray-500 mt-2">
@@ -128,7 +130,6 @@ const Home = () => {
               />
             </div>
           </section>
-
           {/* About Section */}
           <section
             id="about"
@@ -156,12 +157,12 @@ const Home = () => {
                 <div className="relative w-[400px] h-[400px] md:w-[450px] md:h-[450px] flex items-center justify-center">
                   {/* Outer Circle Borders - Always Centered */}
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div className="absolute w-[460px] h-[460px] md:w-[510px] md:h-[510px] rounded-full border border-[#fd8439]" />
-                    <div className="absolute w-[430px] h-[430px] md:w-[480px] md:h-[480px] rounded-full border-2 border-[#fd8439]" />
-                    <div className="absolute w-[400px] h-[400px] md:w-[450px] md:h-[450px] rounded-full border-2 border-[#fd8439]" />
-                    <div className="absolute w-[370px] h-[370px] md:w-[420px] md:h-[420px] rounded-full border-4 border-[#fd8439]" />
-                    <div className="absolute w-[340px] h-[340px] md:w-[390px] md:h-[390px] rounded-full border-4 border-[#fd8439]" />
-                    <div className="absolute w-[310px] h-[310px] md:w-[360px] md:h-[360px] rounded-full border-4 border-[#fd8439]" />
+                    <div className="absolute w-[460px] h-[460px] md:w-[510px] md:h-[510px] rounded-full border border-[#fd8439] animate-pulse" />
+                    <div className="absolute w-[430px] h-[430px] md:w-[480px] md:h-[480px] rounded-full border-2 border-[#fd8439] animate-pulse" />
+                    <div className="absolute w-[400px] h-[400px] md:w-[450px] md:h-[450px] rounded-full border-2 border-[#fd8439] animate-pulse" />
+                    <div className="absolute w-[370px] h-[370px] md:w-[420px] md:h-[420px] rounded-full border-4 border-[#fd8439] animate-pulse" />
+                    <div className="absolute w-[340px] h-[340px] md:w-[390px] md:h-[390px] rounded-full border-4 border-[#fd8439] animate-pulse" />
+                    <div className="absolute w-[310px] h-[310px] md:w-[360px] md:h-[360px] rounded-full border-4 border-[#fd8439] animate-pulse" />
                   </div>
 
                   {/* Profile Picture */}
@@ -209,9 +210,20 @@ const Home = () => {
           {/* Education Section */}
           <section
             id="education"
-            className="p-10 md:p-30 flex flex-col justify-between"
+            className="relative p-10 md:p-30 flex flex-col justify-between items-center"
           >
-            <div className="flex flex-col items-center">
+            {/* Bigger Filled Circular Background */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none mt-16">
+              <div className="absolute w-[700px] h-[700px] md:w-[900px] md:h-[600px]  bg-[#fd8439] opacity-5  " />
+              <div className="absolute w-[650px] h-[650px] md:w-[850px] md:h-[550px]  bg-[#fd8439] opacity-15" />
+              <div className="absolute w-[600px] h-[600px] md:w-[800px] md:h-[500px]  bg-[#fd8439] opacity-25 " />
+              <div className="absolute w-[550px] h-[550px] md:w-[750px] md:h-[450px]  bg-[#fd8439] opacity-35 " />
+              <div className="absolute w-[500px] h-[500px] md:w-[700px] md:h-[400px]  bg-[#fd8439] opacity-45 " />
+              <div className="absolute w-[450px] h-[550px] md:w-[650px] md:h-[350px]  bg-[#fd8439] opacity-55 " />
+            </div>
+
+            {/* Education Section Content */}
+            <div className="relative z-10 flex flex-col items-center">
               <h1 className="text-3xl font-bold text-center mb-6">Education</h1>
               <hr />
               <div className="max-w-xs sm:max-w-md md:max-w-lg bg-white shadow-lg rounded-lg flex flex-col items-center">
@@ -250,12 +262,12 @@ const Home = () => {
           {/* Skills Section */}
           <section
             id="skills"
-            className="p-10 md:p-30 flex flex-col justify-between"
+            className="p-10 md:p-30 flex flex-col justify-between "
           >
             <div className="flex flex-col items-center">
               <h1 className="text-3xl font-bold text-center mb-6">Skills</h1>
               <hr />
-              <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-7 gap-4 mt-6">
+              <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-7 gap-4 mt-6  text-black">
                 {/* Skill Items */}
                 <div className="pt-2 sm:p-4 bg-white rounded-lg shadow-md text-center hover:bg-[#fd8439] hover:text-white transition-all duration-300">
                   <div className="flex justify-center items-center">
@@ -425,7 +437,7 @@ const Home = () => {
           </section>
 
           <section
-            id="projects"
+            id="Projects"
             className="p-10 md:p-30 flex flex-col justify-between"
           >
             <div className="flex flex-col items-center">
