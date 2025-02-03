@@ -43,7 +43,6 @@ import dduPic from "../assets/ddu.png";
 import BuyNSellHub from "../assets/BuyNSellHub.png";
 import WPA from "../assets/WPA.jpg";
 import FSD from "../assets/FSD.png";
-import GradientBg from "../assets/Gradient.jpg";
 import { FaGithub } from "react-icons/fa6";
 
 const Home = () => {
