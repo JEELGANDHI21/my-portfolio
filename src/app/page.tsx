@@ -94,12 +94,12 @@ const Home = () => {
           <section
             id="home"
             className="h-screen flex flex-col justify-center items-start text-left px-10 md:items-center md:text-center md:px-20 transition-all
-        bg-[url('../assets/Gradient1.png')] bg-cover bg-center bg-no-repeat"
+        bg-[url('../assets/Gradient1.png')] "
           >
-            <h1 className="text-3xl sm:text-5xl font-bold">Jeel Gandhi</h1>
-            <p className="text-lg sm:text-xl text-gray-500 mt-2">
+            <h1 className="text-3xl sm:text-5xl font-bold mt-40 md:mt-36">Jeel Gandhi</h1>
+            <p className="text-lg sm:text-xl text-black mt-2">
               I&apos;m a{" "}
-              <span className="text-[#fd8439]">
+              <span className="text-rose-200">
                 <ReactTyped
                   strings={[
                     "Software Developer",
@@ -261,7 +261,7 @@ const Home = () => {
           {/* Skills Section */}
           <section
             id="skills"
-            className="p-10 md:p-30 flex flex-col justify-between "
+            className="p-10 md:p-30 flex flex-col justify-between bg-[url('../assets/Gradient2.jpg')] bg-right "
           >
             <div className="flex flex-col items-center">
               <h1 className="text-3xl font-bold text-center mb-6">Skills</h1>
@@ -586,7 +586,7 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, icon }) => (
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="text-gray-700 hover:text-blue-500 transition-colors"
+    className="text-white hover:text-black transition-colors"
   >
     {icon}
   </a>
