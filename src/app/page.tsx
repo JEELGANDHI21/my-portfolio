@@ -209,17 +209,17 @@ const Home = () => {
           {/* Education Section */}
           <section
             id="education"
-            className="relative p-10 md:p-30 flex flex-col justify-between items-center"
+            className="relative p-10 md:p-30 flex flex-col justify-between items-center "
           >
             {/* Bigger Filled Circular Background */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none mt-16">
+            {/* <div className="absolute inset-0 flex items-center justify-center pointer-events-none mt-16">
               <div className="absolute w-[700px] h-[700px] md:w-[900px] md:h-[600px]  bg-[#fd8439] opacity-5  " />
               <div className="absolute w-[650px] h-[650px] md:w-[850px] md:h-[550px]  bg-[#fd8439] opacity-15" />
               <div className="absolute w-[600px] h-[600px] md:w-[800px] md:h-[500px]  bg-[#fd8439] opacity-25 " />
               <div className="absolute w-[550px] h-[550px] md:w-[750px] md:h-[450px]  bg-[#fd8439] opacity-35 " />
               <div className="absolute w-[500px] h-[500px] md:w-[700px] md:h-[400px]  bg-[#fd8439] opacity-45 " />
               <div className="absolute w-[450px] h-[550px] md:w-[650px] md:h-[350px]  bg-[#fd8439] opacity-55 " />
-            </div>
+            </div> */}
 
             {/* Education Section Content */}
             <div className="relative z-10 flex flex-col items-center">
@@ -261,7 +261,7 @@ const Home = () => {
           {/* Skills Section */}
           <section
             id="skills"
-            className="p-10 md:p-30 flex flex-col justify-between bg-[url('../assets/Gradient2.jpg')] bg-right "
+            className="p-10 md:p-30 flex flex-col justify-between "
           >
             <div className="flex flex-col items-center">
               <h1 className="text-3xl font-bold text-center mb-6">Skills</h1>
