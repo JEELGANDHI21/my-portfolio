@@ -58,11 +58,11 @@ const Home = () => {
       </button>
 
       <aside
-        className={`fixed md:left-0 top-1/2 transform -translate-y-1/2 flex flex-col items-start space-y-3 w-16
-      transition-all duration-300 md:flex ${
+        className={`fixed md:left-0 top-1/2 transform -translate-y-1/2 flex flex-col items-start space-y-3 w-16 transition-all duration-300 
+      md:w-64 md:flex ${
         isOpen
-          ? "translate-x-0 "
-          : "-translate-x-full md:translate-x-0 -left-11"
+          ? "translate-x-0 bg-orange-100 z-20 w-1/2 py-20" // Sidebar appears on top
+          : "-translate-x-full md:translate-x-0 -left-11 z-10" // Hidden by default
       }`}
       >
         <NavItem
