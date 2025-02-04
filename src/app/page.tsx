@@ -121,7 +121,7 @@ const Home = () => {
           <section
             id="home"
             className="h-screen flex flex-col justify-center items-start text-left px-16 md:items-center md:text-center md:px-20 transition-all
-        bg-[url('../assets/Gradient4.jpeg')] "
+        bg-[url('../assets/Gradient1.png')] "
           >
             <h1 className="font-dancing  md:text-6xl text-4xl sm:text-5xl font-bold mt-40 md:mt-36">
               Jeel Gandhi
