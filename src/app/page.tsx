@@ -5,7 +5,6 @@ import {
   FaUser,
   FaGraduationCap,
   FaBriefcase,
-  FaAward,
   FaEnvelope,
   FaFileAlt,
   FaInstagram,
@@ -43,7 +42,7 @@ import dduPic from "../assets/ddu.png";
 import BuyNSellHub from "../assets/BuyNSellHub.png";
 import WPA from "../assets/WPA.jpg";
 import FSD from "../assets/FSD.png";
-import { FaGithub } from "react-icons/fa6";
+import { FaCertificate, FaGithub } from "react-icons/fa6";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -59,47 +58,77 @@ const Home = () => {
       </button>
 
       <aside
-        className={`fixed md:left-0 top-1/2 transform -translate-y-1/2 flex flex-col items-start space-y-4 w-16
+        className={`fixed md:left-0 top-1/2 transform -translate-y-1/2 flex flex-col items-start space-y-3 w-16
       transition-all duration-300 md:flex ${
         isOpen
           ? "translate-x-0 "
           : "-translate-x-full md:translate-x-0 -left-11"
       }`}
       >
-        <NavItem href="#home" icon={<FaHome size={20} />} text="Home" />
-        <NavItem href="#about" icon={<FaUser size={20} />} text="About" />
+        <NavItem
+          href="#home"
+          icon={<FaHome size={22} />}
+          text="Home"
+          download={false}
+        />
+        <NavItem
+          href="#about"
+          icon={<FaUser size={22} />}
+          text="About"
+          download={false}
+        />
         <NavItem
           href="#education"
-          icon={<FaGraduationCap size={20} />}
+          icon={<FaGraduationCap size={22} />}
           text="Education"
+          download={false}
         />
-        <NavItem href="#skills" icon={<FaBrain size={20} />} text="Skills" />
+        <NavItem
+          href="#skills"
+          icon={<FaBrain size={22} />}
+          text="Skills"
+          download={false}
+        />
         <NavItem
           href="#Projects"
-          icon={<FaBriefcase size={20} />}
+          icon={<FaBriefcase size={22} />}
           text="Projects"
+          download={false}
         />
-        <NavItem href="#awards" icon={<FaAward size={20} />} text="Awards" />
+        <NavItem
+          href="#certification"
+          icon={<FaCertificate size={22} />}
+          text="Certifications"
+          download={false}
+        />
         <NavItem
           href="#contact"
-          icon={<FaEnvelope size={20} />}
+          icon={<FaEnvelope size={22} />}
           text="Contact"
+          download={false}
         />
-        <NavItem href="#resume" icon={<FaFileAlt size={20} />} text="Resume" />
+        <NavItem
+          href="/assets/Resume.pdf"
+          icon={<FaFileAlt size={24} />}
+          text="Resume"
+          download={true}
+        />
       </aside>
 
-      <main className="flex-1 flex flex-col justify-center items-center  md:px-0 overflow-x-hidden">
+      <main className="flex-1 font-merri flex flex-col justify-center items-center  md:px-0 overflow-x-hidden">
         <div className="w-full space-y-8">
           {/* Home Section with Background Image */}
           <section
             id="home"
-            className="h-screen flex flex-col justify-center items-start text-left px-10 md:items-center md:text-center md:px-20 transition-all
-        bg-[url('../assets/Gradient1.png')] "
+            className="h-screen flex flex-col justify-center items-start text-left px-16 md:items-center md:text-center md:px-20 transition-all
+        bg-[url('../assets/GradientF.jpeg')] "
           >
-            <h1 className="text-3xl sm:text-5xl font-bold mt-40 md:mt-36">Jeel Gandhi</h1>
-            <p className="text-lg sm:text-xl text-black mt-2">
+            <h1 className="font-dancing  md:text-6xl text-4xl sm:text-5xl font-bold mt-40 md:mt-36">
+              Jeel Gandhi
+            </h1>
+            <p className="font-merri text-lg sm:text-xl text-black mt-2">
               I&apos;m a{" "}
-              <span className="text-rose-200">
+              <span className="text-white">
                 <ReactTyped
                   strings={[
                     "Software Developer",
@@ -136,7 +165,7 @@ const Home = () => {
           >
             <div className="flex flex-col items-center">
               <h1 className="text-3xl font-bold text-center mb-6">About Me</h1>
-              <hr />
+              <hr className="w-1/3 md:w-1/4 border-t-2 border-[#fd8439] mb-6 mx-auto rounded-lg transition-all duration-300 hover:border-[#fd8439]" />
               <p className="text-lg text-center mb-6">
                 I am a passionate tech-enthusiast with a &apos;can-do&apos;
                 attitude. I have a willingness to explore new languages, tools,
@@ -209,50 +238,34 @@ const Home = () => {
           {/* Education Section */}
           <section
             id="education"
-            className="relative p-10 md:p-30 flex flex-col justify-between items-center "
+            className="p-10 md:p-30 flex flex-col justify-between items-center"
           >
-            {/* Bigger Filled Circular Background */}
-            {/* <div className="absolute inset-0 flex items-center justify-center pointer-events-none mt-16">
-              <div className="absolute w-[700px] h-[700px] md:w-[900px] md:h-[600px]  bg-[#fd8439] opacity-5  " />
-              <div className="absolute w-[650px] h-[650px] md:w-[850px] md:h-[550px]  bg-[#fd8439] opacity-15" />
-              <div className="absolute w-[600px] h-[600px] md:w-[800px] md:h-[500px]  bg-[#fd8439] opacity-25 " />
-              <div className="absolute w-[550px] h-[550px] md:w-[750px] md:h-[450px]  bg-[#fd8439] opacity-35 " />
-              <div className="absolute w-[500px] h-[500px] md:w-[700px] md:h-[400px]  bg-[#fd8439] opacity-45 " />
-              <div className="absolute w-[450px] h-[550px] md:w-[650px] md:h-[350px]  bg-[#fd8439] opacity-55 " />
-            </div> */}
+            <h1 className="text-3xl font-bold text-center mb-6">Education</h1>
+            <hr className="w-1/3 md:w-1/4 border-t-2 border-[#fd8439] mb-6 mx-auto rounded-lg transition-all duration-300 hover:border-[#fd8439]" />
+            <div className="max-w-xs sm:max-w-md md:max-w-lg bg-white shadow-lg rounded-lg flex flex-col items-center">
+              {/* University Logo */}
+              <Image
+                src={dduPic}
+                alt="University Logo"
+                className="w-full h-full object-cover sm:w-full sm:h-full md:w-full md:h-full rounded-t-lg"
+              />
 
-            {/* Education Section Content */}
-            <div className="relative z-10 flex flex-col items-center">
-              <h1 className="text-3xl font-bold text-center mb-6">Education</h1>
-              <hr />
-              <div className="max-w-xs sm:max-w-md md:max-w-lg bg-white shadow-lg rounded-lg flex flex-col items-center">
-                {/* University Logo */}
-                <Image
-                  src={dduPic}
-                  alt="University Logo"
-                  className="w-full h-full object-cover sm:w-full sm:h-full md:w-full md:h-full rounded-t-lg"
-                />
+              <div className="flex flex-col items-center hover:bg-slate-300 rounded-lg">
+                {/* Hover Effect for the Text Section */}
+                <div className="group  transition-all duration-300 w-full text-center rounded-lg">
+                  {/* University Name */}
+                  <h2 className="text-xl font-bold mb-2 sm:text-2xl md:text-3xl text-orange-500 mt-2 ">
+                    Dharmsinh Desai University
+                  </h2>
+                  <p className="text-lg  text-black">Bachelor Of Technology</p>
+                  <p className="text-lg text-black">(Information Technology)</p>
 
-                <div className="flex flex-col items-center">
-                  {/* Hover Effect for the Text Section */}
-                  <div className="group hover:bg-[#fd8439] hover:opacity-80 transition-all duration-300 w-full text-center rounded-lg">
-                    {/* University Name */}
-                    <h2 className="text-xl font-bold mb-2 sm:text-2xl md:text-3xl text-black group-hover:text-white">
-                      Dharmsinh Desai University
-                    </h2>
-                    <p className="text-lg font-mono text-black">
-                      Bachelor Of Technology
-                    </p>
-                    <p className="text-lg text-black">
-                      (Information Technology)
-                    </p>
-
-                    {/* What I Learned */}
-                    <p className="text-gray-600 text-center sm:text-lg md:text-xl mt-4">
-                      Relevant Coursework <br />
-                      Data Structures and Algorithm, Machine Learning
-                    </p>
-                  </div>
+                  {/* What I Learned */}
+                  <p className="text-gray-600 text-center sm:text-lg md:text-base mt-4 mb-2">
+                    Relevant Coursework <br />
+                    Data Structures and Algorithm, Advanced Java, Full Stack
+                    Development, Deep Learning, DBMS
+                  </p>
                 </div>
               </div>
             </div>
@@ -265,7 +278,7 @@ const Home = () => {
           >
             <div className="flex flex-col items-center">
               <h1 className="text-3xl font-bold text-center mb-6">Skills</h1>
-              <hr />
+              <hr className="w-1/3 md:w-1/4 border-t-2 border-[#fd8439] mb-6 mx-auto rounded-lg transition-all duration-300 hover:border-[#fd8439]" />
               <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-7 gap-4 mt-6  text-black">
                 {/* Skill Items */}
                 <div className="pt-2 sm:p-4 bg-white rounded-lg shadow-md text-center hover:bg-[#fd8439] hover:text-white transition-all duration-300">
@@ -441,10 +454,10 @@ const Home = () => {
           >
             <div className="flex flex-col items-center">
               <h1 className="text-3xl font-bold text-center mb-6">Projects</h1>
-              <hr />
+              <hr className="w-1/3 md:w-1/4 border-t-2 border-[#fd8439] mb-6 mx-auto rounded-lg transition-all duration-300 hover:border-[#fd8439]" />
               <div className="flex flex-wrap gap-4 justify-center">
                 {/* Project 1 */}
-                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-2/5 p-[16.19px] bg-white rounded-md border-2 border-black flex flex-col justify-start items-center gap-[16.19px] group relative">
+                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-2/5 p-[16.19px] bg-white rounded-md border-4 border-[#fd8439] flex flex-col justify-start items-center gap-[16.19px] group relative">
                   <Image
                     className="md:w-[350px] md:h-[200.81px] w-[266px] h-[159.81px] rounded-[5.15px] shadow-[0px_2.94px_0px_0px_rgba(253,132,57,1.00)] border-2"
                     src={BuyNSellHub}
@@ -475,7 +488,7 @@ const Home = () => {
                 </div>
 
                 {/* Project 2 */}
-                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-2/5 p-[16.19px] bg-white rounded-md border-2 border-black flex flex-col justify-start items-center gap-[16.19px] group relative">
+                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-2/5 p-[16.19px] bg-white rounded-md border-4 border-[#fd8439] flex flex-col justify-start items-center gap-[16.19px] group relative">
                   <Image
                     className="md:w-[350px] md:h-[200.81px] w-[266px] h-[159.81px] rounded-[5.15px] shadow-[0px_2.94px_0px_0px_rgba(253,132,57,1.00)] border-2"
                     src={WPA}
@@ -506,7 +519,7 @@ const Home = () => {
                 </div>
 
                 {/* Project 3 */}
-                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-2/5 p-[16.19px] bg-white rounded-md border-2 border-black flex flex-col justify-start items-center gap-[16.19px] group relative md:mt-3">
+                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-2/5 p-[16.19px] bg-white rounded-md border-4 border-[#fd8439] flex flex-col justify-start items-center gap-[16.19px] group relative md:mt-3">
                   <Image
                     className="md:w-[350px] md:h-[200.81px] w-[266px] h-[159.81px] rounded-[5.15px] shadow-[0px_2.94px_0px_0px_rgba(253,132,57,1.00)] border-2"
                     src={FSD}
@@ -539,12 +552,156 @@ const Home = () => {
             </div>
           </section>
 
+          <section
+            id="certification"
+            className="p-6 md:p-10 flex flex-col justify-center items-center w-full relative"
+          >
+            <h1 className="text-3xl font-bold text-center mb-6">
+              Certifications
+            </h1>
+            <hr className="w-1/3 md:w-1/4 border-t-2 border-[#fd8439] mb-6 mx-auto rounded-lg transition-all duration-300 hover:border-[#fd8439]" />
+            {/* Borders */}
+            <div className="hidden md:block absolute inset-0 w-full h-full pointer-events-none">
+              {/* Left Vertical Border (Intersects Top & Bottom) */}
+              <div className="absolute -top-2 md:-top-7 left-[20%] bottom-0 w-0 md:h-[475px] h-[425px] border-l-2 border-[#fd8439]"></div>
+
+              {/* Right Vertical Border (Intersects Top & Bottom) */}
+              <div className="absolute md:-top-7 right-[20%] bottom-0 w-0 md:h-[475px] h-[375px] border-l-2 border-[#fd8439]"></div>
+
+              {/* Top Horizontal Border (Intersects Left & Right) */}
+              <div className="absolute top-0 left-[15%] w-[70%] border-t-2 border-[#fd8439]"></div>
+
+              {/* Bottom Horizontal Border (Intersects Left & Right) */}
+              <div className="absolute bottom-0 left-[15%] w-[70%] border-t-2 border-[#fd8439]"></div>
+            </div>
+
+            {/* Certifications List */}
+            <div className="md:mt-6 mt-4 flex flex-col gap-6 md:ml-12 ml-3 w-full max-w-[850px]">
+              {/* Item 1 */}
+              <div className="flex flex-wrap sm:flex-nowrap items-center gap-4">
+                <div className="md:px-6 md:py-3 px-2 py-1 bg-[#fd8439] rounded-md border-2 border-white text-center text-black text- sm:text-4xl font-normal font-['Handlee'] -ml-4 md:ml-20">
+                  1
+                </div>
+                <div>
+                  <div className="text-sm sm:text-xl font-normal text-white">
+                    <a
+                      href="https://www.credly.com/badges/5bc62b83-9f5c-4cce-b789-a5ddc95ff1c9/public_url"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-[#fd8439]"
+                    >
+                      AWS - Machine Learning Foundations 🔗
+                    </a>
+                  </div>
+                  <div className="text-sm sm:text-lg text-gray-300">
+                    Issued July,2024
+                  </div>
+                </div>
+              </div>
+
+              {/* Item 2 */}
+              <div className="flex flex-wrap sm:flex-nowrap items-center gap-4 ">
+                <div className="md:px-6 md:py-3 px-2 py-1 bg-[#fd8439] rounded-md border-2 border-white text-center text-black text-base sm:text-4xl font-normal font-['Handlee'] -ml-4 md:ml-20">
+                  2
+                </div>
+                <div>
+                  <div className="text-sm sm:text-xl font-normal text-white ">
+                    <a
+                      href="https://www.credly.com/badges/07532bd5-a114-4226-8e4e-f243d6e0bfe8/public_url"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-[#fd8439]"
+                    >
+                      AWS Academy Cloud Foundations 🔗
+                    </a>
+                  </div>
+                  <div className="text-sm sm:text-lg text-gray-300">
+                    Issued May,2024
+                  </div>
+                </div>
+              </div>
+
+              {/* Item 3 */}
+              <div className="flex flex-wrap sm:flex-nowrap items-center gap-4">
+                <div className="md:px-6 md:py-3 px-2 py-1 bg-[#fd8439] rounded-md border-2 border-white  text-center text-black text-base sm:text-4xl font-normal font-['Handlee'] -ml-4 md:ml-20">
+                  3
+                </div>
+                <div>
+                  <div className="text-sm sm:text-xl font-normal text-white">
+                    <a
+                      href="https://www.udemy.com/certificate/UC-0ffcc9f0-eb36-422c-a0cd-b788a5df3e77/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-[#fd8439]"
+                    >
+                      Udemy - Web Development Bootcamp 🔗
+                    </a>
+                  </div>
+                  <div className="text-sm sm:text-lg text-gray-300">
+                    Issued March,2024
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section
+            id="contact"
+            className="p-6 md:p-10 flex flex-col justify-center items-center"
+          >
+            <h1 className="text-3xl font-bold text-center mb-6">Contact Me</h1>
+            <hr className="w-1/3 md:w-1/4 border-t-2 border-[#fd8439] mb-6 mx-auto rounded-lg transition-all duration-300 hover:border-[#fd8439]" />
+
+            <div className="w-full max-w-[90%] sm:max-w-[600px] md:max-w-[750px] lg:max-w-[850px] bg-black rounded-md shadow-lg border-none border-[#fd8439] overflow-hidden p-6 sm:p-8 relative ">
+              {/* Heading */}
+              <div className="text-center text-white text-lg sm:text-xl md:text-4xl font-medium font-['Space Grotesk']">
+                Ready to take your digital presence to the next level?
+              </div>
+
+              {/* Description */}
+              <div className="mt-4 text-center text-white text-sm sm:text-lg md:text-lg font-normal font-['Space Grotesk'] px-2 sm:px-4">
+                Reach out to me today and let&apos;s discuss how I can help you
+                achieve your goals.
+              </div>
+
+              {/* CTA Button */}
+              <div className="mt-6 sm:mt-8 flex justify-center">
+                <a href="mailto:jeelgandhi4585@example.com">
+                  <button className="px-5 sm:px-6 py-2 sm:py-3 bg-[#fd8439] rounded-full border-4 border-white text-black text-sm sm:text-lg font-bold font-['Space Grotesk'] cursor-pointer transition-all hover:bg-[white]">
+                    Let&apos;s get in touch ✉️
+                  </button>
+                </a>
+              </div>
+            </div>
+          </section>
+
           {/* Contact Section */}
-          <section id="contact" className="p-10">
-            <h2 className="text-3xl font-bold text-center">Contact</h2>
-            <p className="text-gray-600 text-center mt-2">
-              Email: your@email.com
-            </p>
+          <section className="flex justify-between items-center p-4 bg-black flex-wrap md:flex-nowrap">
+            {/* Left side: Copyright */}
+            <div className="flex space-x-2 md:ml-10 mt-2 md:mt-0 ">
+              <span className="text-white md:text-[18px] text-[16px] font-normal font-['Poppins'] tracking-wide">
+                Copyright © 2025
+              </span>
+              <span className="text-[#fd6f00] md:text-[18px] text-[16px] font-bold font-['Poppins'] tracking-wide">
+                Jeel Gandhi |
+              </span>
+            </div>
+
+            {/* Right side: Profile links */}
+            <div className="flex space-x-4 mt-2 md:mt-0">
+              <SocialLink
+                href="https://www.linkedin.com/in/jeel-gandhi-71800624b/"
+                icon={<FaLinkedinIn size={22} />}
+              />
+              <SocialLink
+                href="https://github.com/JEELGANDHI21"
+                icon={<FaGithub size={22} />}
+              />
+              <SocialLink
+                href="https://www.instagram.com/jeel._.gandhi/#"
+                icon={<FaInstagram size={22} />}
+              />
+            </div>
           </section>
         </div>
       </main>
@@ -559,12 +716,19 @@ interface NavItemProps {
   href: string;
   icon: JSX.Element;
   text: string;
+  download: boolean;
 }
 
-const NavItem: React.FC<NavItemProps> = ({ href, icon, text }) => (
+const NavItem: React.FC<NavItemProps> = ({
+  href,
+  icon,
+  text,
+  download = false,
+}) => (
   <a
     href={href}
     className="group flex items-center justify-start p-2 rounded-full transition-all transform hover:scale-95 hover:bg-[#fd8439] hover:opacity-80"
+    download={download ? true : undefined}
   >
     <div className="bg-white p-2 rounded-full inline-flex items-center justify-center">
       <span className="text-[#fd8439]">{icon}</span>
@@ -586,7 +750,7 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, icon }) => (
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="text-white hover:text-black transition-colors"
+    className="text-white hover:text-gray-800 transition-colors"
   >
     {icon}
   </a>

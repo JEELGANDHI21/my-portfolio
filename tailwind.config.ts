@@ -12,6 +12,13 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        dancing: ["Dancing Script", "cursive"],
+        pinyon: ["Pinyon Script", "cursive"],
+        indie: ["Indie Flower", "serif"],
+        permanent : ["Permanent Marker","serif"],
+        merri : ["Merriweather","serif"],
+      },
     },
   },
   plugins: [],
