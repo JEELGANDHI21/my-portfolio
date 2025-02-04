@@ -108,7 +108,7 @@ const Home = () => {
           download={false}
         />
         <NavItem
-          href="/assets/Resume.pdf"
+          href="/Resume.pdf"
           icon={<FaFileAlt size={24} />}
           text="Resume"
           download={true}
