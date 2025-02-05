@@ -666,7 +666,7 @@ const Home = () => {
 
               {/* CTA Button */}
               <div className="mt-6 sm:mt-8 flex justify-center">
-                <a href="mailto:jeelgandhi4585@example.com">
+                <a href="mailto:jeelgandhi4585@gmail.com">
                   <button className="px-5 sm:px-6 py-2 sm:py-3 bg-[#fd8439] rounded-full border-4 border-white text-black text-sm sm:text-lg font-bold font-['Space Grotesk'] cursor-pointer transition-all hover:bg-[white]">
                     Let&apos;s get in touch ✉️
                   </button>
