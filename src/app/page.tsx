@@ -61,7 +61,7 @@ const Home = () => {
         className={`fixed md:left-0 top-1/2 transform -translate-y-1/2 flex flex-col items-start space-y-3 w-16 transition-all duration-300 
       md:w-64 md:flex ${
         isOpen
-          ? "translate-x-0 bg-orange-100 z-20 w-1/2 py-20" // Sidebar appears on top
+          ? "translate-x-0 bg-[#ffcf8e] z-20 w-[50%] py-56" // Sidebar appears on top
           : "-translate-x-full md:translate-x-0 -left-11 z-10" // Hidden by default
       }`}
       >
@@ -579,7 +579,7 @@ const Home = () => {
             <div className="md:mt-6 mt-4 flex flex-col gap-6 md:ml-12 ml-3 w-full max-w-[850px]">
               {/* Item 1 */}
               <div className="flex flex-wrap sm:flex-nowrap items-center gap-4">
-                <div className="md:px-6 md:py-3 px-2 py-1 bg-[#fd8439] rounded-md border-2 border-white text-center text-black text- sm:text-4xl font-normal font-['Handlee'] -ml-4 md:ml-20">
+                <div className="md:px-6 md:py-3 px-2 py-1 bg-[#fd8439] rounded-md border-2 border-white text-center text-black text- sm:text-4xl font-normal font-['Handlee']  md:ml-20">
                   1
                 </div>
                 <div>
@@ -590,18 +590,19 @@ const Home = () => {
                       rel="noopener noreferrer"
                       className="hover:text-[#fd8439]"
                     >
-                      AWS - Machine Learning Foundations 🔗
+                      Machine Learning Foundations 🔗
                     </a>
                   </div>
-                  <div className="text-sm sm:text-lg text-gray-300">
-                    Issued July,2024
+                  <div className="text-xs sm:text-lg text-gray-300 mt-2">
+                    AWS Academy
                   </div>
+                  
                 </div>
               </div>
 
               {/* Item 2 */}
               <div className="flex flex-wrap sm:flex-nowrap items-center gap-4 ">
-                <div className="md:px-6 md:py-3 px-2 py-1 bg-[#fd8439] rounded-md border-2 border-white text-center text-black text-base sm:text-4xl font-normal font-['Handlee'] -ml-4 md:ml-20">
+                <div className="md:px-6 md:py-3 px-2 py-1 bg-[#fd8439] rounded-md border-2 border-white text-center text-black text-base sm:text-4xl font-normal font-['Handlee']  md:ml-20">
                   2
                 </div>
                 <div>
@@ -612,18 +613,18 @@ const Home = () => {
                       rel="noopener noreferrer"
                       className="hover:text-[#fd8439]"
                     >
-                      AWS Academy Cloud Foundations 🔗
+                      Cloud Foundations 🔗
                     </a>
                   </div>
-                  <div className="text-sm sm:text-lg text-gray-300">
-                    Issued May,2024
+                  <div className="text-xs sm:text-lg text-gray-300 mt-2">
+                    AWS Academy
                   </div>
                 </div>
               </div>
 
               {/* Item 3 */}
               <div className="flex flex-wrap sm:flex-nowrap items-center gap-4">
-                <div className="md:px-6 md:py-3 px-2 py-1 bg-[#fd8439] rounded-md border-2 border-white  text-center text-black text-base sm:text-4xl font-normal font-['Handlee'] -ml-4 md:ml-20">
+                <div className="md:px-6 md:py-3 px-2 py-1 bg-[#fd8439] rounded-md border-2 border-white  text-center text-black text-base sm:text-4xl font-normal font-['Handlee']  md:ml-20">
                   3
                 </div>
                 <div>
@@ -634,11 +635,11 @@ const Home = () => {
                       rel="noopener noreferrer"
                       className="hover:text-[#fd8439]"
                     >
-                      Udemy - Web Development Bootcamp 🔗
+                       Web Development Bootcamp 🔗
                     </a>
                   </div>
-                  <div className="text-sm sm:text-lg text-gray-300">
-                    Issued March,2024
+                  <div className="text-xs sm:text-lg text-gray-300 mt-2">
+                    Udemy
                   </div>
                 </div>
               </div>
