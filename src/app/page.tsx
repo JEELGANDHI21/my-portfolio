@@ -42,10 +42,61 @@ import dduPic from "../assets/ddu.png";
 import BuyNSellHub from "../assets/BuyNSellHub.png";
 import WPA from "../assets/WPA.jpg";
 import FSD from "../assets/FSD.png";
+import RESUMATEAI from "../assets/ResumateAI.png";
 import { FaCertificate, FaGithub } from "react-icons/fa6";
+
+interface TimelineCardProps {
+  side: "left" | "right";
+  role: string;
+  company: string;
+  date: string;
+  points: string[];
+}
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const TimelineCard: React.FC<TimelineCardProps> = ({
+    side,
+    role,
+    company,
+    date,
+    points,
+  }) => {
+    const isLeft = side === "left";
+
+    return (
+      <div
+        className={`
+        relative mb-16 flex
+        pl-12 sm:pl-16 md:pl-8
+        ${isLeft ? "md:justify-start md:pr-10" : "md:justify-end md:pl-10"}
+      `}
+      >
+        {/* Dot */}
+        <div
+          className="
+    absolute top-6
+    left-6 md:left-1/2
+    -translate-x-1/2
+    w-4 h-4 bg-white rounded-full z-10
+  "
+        ></div>
+
+        {/* Card */}
+        <div className="bg-[#2a2a2a] text-white w-full md:w-[45%] p-6 rounded-xl shadow-lg">
+          <h3 className="text-xl font-bold">{role}</h3>
+          <p className="text-cyan-400 font-semibold">{company}</p>
+          <p className="text-orange-400 text-sm mb-4">{date}</p>
+
+          <ul className="list-disc pl-5 space-y-2 text-sm text-gray-200">
+            {points.map((point: string, idx: number) => (
+              <li key={idx}>{point}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="flex min-h-screen bg-black text-white ">
@@ -158,6 +209,7 @@ const Home = () => {
               />
             </div>
           </section>
+
           {/* About Section */}
           <section
             id="about"
@@ -206,7 +258,7 @@ const Home = () => {
 
               {/* Text Section */}
               <div className="text-center md:text-left mt-4 md:-mt-8 md:ml-10">
-                <h2 className="text-2xl font-bold mb-4">
+                <h2 className="text-2xl font-bold mb-4 text-[#fd8439]">
                   Full Stack Developer & AI/ML Enthusiast
                 </h2>
                 <p>
@@ -235,36 +287,102 @@ const Home = () => {
             </div>
           </section>
 
+          <section id="experience" className="py-16 px-4">
+            <h1 className="text-3xl font-bold text-center text-white mb-6">
+              Experience
+            </h1>
+            <hr className="w-1/3 md:w-1/4 border-t-2 border-[#fd8439] mb-6 mx-auto rounded-lg transition-all duration-300 hover:border-[#fd8439]" />
+
+            <div className="relative max-w-6xl mx-auto -mb-20">
+              {/* Vertical line */}
+              <div className="absolute top-0 left-6 md:left-1/2 md:-translate-x-1/2 w-1 h-full bg-[#fd8439]"></div>
+
+              {/* Item 1 */}
+              <TimelineCard
+                side="left"
+                role="Tr. Software Developer"
+                company="Sahajanand Technologies Private Limited"
+                date="Jun 2025- Present"
+                points={[
+                  "Engineered real-time web dashboard using React.js and Node.js to collect and visualize FDM 3D printer data with object-oriented programming.",
+                  "Orchestrated RESTful API development and implemented automated data polling from FDM 3D printer using Python scripting, enabling continuous monitoring and data collection.",
+                  "Developed Analytics module with trend analysis algorithms and comprehensive testing to predict printer maintenance requirements 48 hours in advance.",
+                ]}
+              />
+
+              {/* Item 2 */}
+              <TimelineCard
+                side="right"
+                role="Software Developer Intern"
+                company="Sahajanand Technologies Private Limited"
+                date="Jan 2025 - May 2025"
+                points={[
+                  "Implemented a full Structure-from-Motion (SfM) pipeline using PyCOLMAP for feature extraction, camera pose estimation, and sparse 3D reconstruction from multi-view 2D images.",
+                  "Integrated and automated OpenMVS for dense point cloud generation, mesh reconstruction, and texturing, enabling high-resolution and reproducible 3D model generation.",
+                ]}
+              />
+            </div>
+          </section>
+
           {/* Education Section */}
           <section
             id="education"
-            className="p-10 md:p-30 flex flex-col justify-between items-center"
+            className="bg-black py-16 px-4 flex flex-col items-center"
           >
-            <h1 className="text-3xl font-bold text-center mb-6">Education</h1>
-            <hr className="w-1/3 md:w-1/4 border-t-2 border-[#fd8439] mb-6 mx-auto rounded-lg transition-all duration-300 hover:border-[#fd8439]" />
-            <div className="max-w-xs sm:max-w-md md:max-w-lg bg-white shadow-lg rounded-lg flex flex-col items-center">
-              {/* University Logo */}
-              <Image
-                src={dduPic}
-                alt="University Logo"
-                className="w-full h-full object-cover sm:w-full sm:h-full md:w-full md:h-full rounded-t-lg"
-              />
+            <h1 className="text-3xl font-bold text-center text-white mb-6">
+              Education
+            </h1>
 
-              <div className="flex flex-col items-center hover:bg-slate-300 rounded-lg">
-                {/* Hover Effect for the Text Section */}
-                <div className="group  transition-all duration-300 w-full text-center rounded-lg">
-                  {/* University Name */}
-                  <h2 className="text-xl font-bold mb-2 sm:text-2xl md:text-3xl text-orange-500 mt-2 ">
-                    Dharmsinh Desai University
-                  </h2>
-                  <p className="text-lg  text-black">Bachelor Of Technology</p>
-                  <p className="text-lg text-black">(Information Technology)</p>
+            <hr className="w-1/3 md:w-1/4 border-t-2 border-[#fd8439] mb-10 mx-auto rounded-lg" />
 
-                  {/* What I Learned */}
-                  <p className="text-gray-600 text-center sm:text-lg md:text-base mt-4 mb-2">
-                    Relevant Coursework <br />
-                    Data Structures and Algorithm, Advanced Java, Full Stack
-                    Development, Deep Learning, DBMS
+            <div
+              className="
+                w-full max-w-3xl rounded-2xl overflow-hidden
+                shadow-md
+                border border-[#fd8439]/30
+                transition-all duration-300
+                hover:shadow-2xl
+              hover:shadow-[#fd8439]/40
+                hover:-translate-y-1
+                "
+            >
+              {/* Top Blue Header */}
+              <div className="bg-[#fd8439] py-8 flex justify-center">
+                <div className="bg-white p-4 rounded-xl">
+                  <Image
+                    src={dduPic}
+                    alt="University Logo"
+                    className="md:w-80 w-60 h-20 object-contain"
+                  />
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="bg-[#2a2a2a] text-center px-6 py-10">
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                  Dharmsinh Desai University
+                </h2>
+
+                <p className="text-cyan-400 text-lg font-semibold">
+                  Bachelor of Technology
+                </p>
+
+                <p className="text-gray-300 italic mt-1">
+                  (Information Technology)
+                </p>
+
+                <p className="text-orange-400 font-semibold mt-4">
+                  Oct 2021 – May 2025
+                </p>
+
+                <div className="mt-6">
+                  <p className="text-cyan-400 font-semibold mb-2">
+                    Relevant Coursework:
+                  </p>
+
+                  <p className="text-gray-300 leading-relaxed">
+                    Data Structures & Algorithms, Databases, Advanced Java,
+                    Design Patterns, Distributed Computing
                   </p>
                 </div>
               </div>
@@ -455,19 +573,24 @@ const Home = () => {
             <div className="flex flex-col items-center">
               <h1 className="text-3xl font-bold text-center mb-6">Projects</h1>
               <hr className="w-1/3 md:w-1/4 border-t-2 border-[#fd8439] mb-6 mx-auto rounded-lg transition-all duration-300 hover:border-[#fd8439]" />
-              <div className="flex flex-wrap gap-4 justify-center">
+              <div className="flex flex-wrap gap-6 justify-center mt-4 ">
                 {/* Project 1 */}
-                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-2/5 p-[16.19px] bg-white rounded-md border-4 border-[#fd8439] flex flex-col justify-start items-center gap-[16.19px] group relative">
+                <div
+                  className="w-full sm:w-1/2 md:w-1/3 lg:w-2/5 p-[16.19px] bg-[#2a2a2a] rounded-md flex flex-col justify-start items-center gap-[16.19px] group relative transition-all duration-300
+  hover:-translate-y-2
+  hover:shadow-2xl
+  hover:shadow-[#fd8439]/40
+  border border-[#fd8439]/30"
+                >
                   <Image
                     className="md:w-[350px] md:h-[200.81px] w-[266px] h-[159.81px] rounded-[5.15px] shadow-[0px_2.94px_0px_0px_rgba(253,132,57,1.00)] border-2"
                     src={BuyNSellHub}
                     alt="Project1"
                   />
                   <div className="flex justify-between items-center w-full px-4">
-                    <div className="text-[#0c0c0c] md:text-xl text-lg font-normal font-['Handlee'] leading-tight">
+                    <div className="text-white md:text-xl text-lg font-semibold leading-tight">
                       BuyNSellHub
-                      <br />
-                      <p className="text-sm">
+                      <p className="text-sm text-cyan-400 mt-1">
                         Tech Stack : MERN, AWS S3, Tailwind CSS
                       </p>
                     </div>
@@ -488,17 +611,23 @@ const Home = () => {
                 </div>
 
                 {/* Project 2 */}
-                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-2/5 p-[16.19px] bg-white rounded-md border-4 border-[#fd8439] flex flex-col justify-start items-center gap-[16.19px] group relative">
+                <div
+                  className="w-full sm:w-1/2 md:w-1/3 lg:w-2/5 p-[16.19px] bg-[#2a2a2a] rounded-md flex flex-col justify-start items-center gap-[16.19px] group relative transition-all duration-300
+  hover:-translate-y-2
+  hover:shadow-2xl
+  hover:shadow-[#fd8439]/40
+  border border-[#fd8439]/30"
+                >
                   <Image
                     className="md:w-[350px] md:h-[200.81px] w-[266px] h-[159.81px] rounded-[5.15px] shadow-[0px_2.94px_0px_0px_rgba(253,132,57,1.00)] border-2"
                     src={WPA}
                     alt="Project2"
                   />
                   <div className="flex justify-between items-center w-full px-4">
-                    <div className="text-[#0c0c0c] md:text-xl text-lg font-normal font-['Handlee'] leading-tight">
+                    <div className="text-white md:text-xl text-lg font-semibold leading-tight">
                       AI - Wall Paint Estimation
                       <br />
-                      <p className="text-sm">
+                      <p className="text-sm text-cyan-400 mt-1">
                         Tech Stack : Python, Meta-SAM2, Streamlit
                       </p>
                     </div>
@@ -519,17 +648,23 @@ const Home = () => {
                 </div>
 
                 {/* Project 3 */}
-                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-2/5 p-[16.19px] bg-white rounded-md border-4 border-[#fd8439] flex flex-col justify-start items-center gap-[16.19px] group relative md:mt-3">
+                <div
+                  className="w-full sm:w-1/2 md:w-1/3 lg:w-2/5 p-[16.19px] bg-[#2a2a2a] rounded-md flex flex-col justify-start items-center gap-[16.19px] group relative transition-all duration-300
+  hover:-translate-y-2
+  hover:shadow-2xl
+  hover:shadow-[#fd8439]/40
+  border border-[#fd8439]/30"
+                >
                   <Image
                     className="md:w-[350px] md:h-[200.81px] w-[266px] h-[159.81px] rounded-[5.15px] shadow-[0px_2.94px_0px_0px_rgba(253,132,57,1.00)] border-2"
                     src={FSD}
                     alt="Project2"
                   />
                   <div className="flex justify-between items-center w-full px-4">
-                    <div className="text-[#0c0c0c] md:text-xl text-lg font-normal font-['Handlee'] leading-tight">
+                    <div className="text-white md:text-xl text-lg font-semibold leading-tight">
                       Event Management System
                       <br />
-                      <p className="text-sm">
+                      <p className="text-sm text-cyan-400 mt-1">
                         Tech Stack : Java, SpringBoot, React, Tailwind
                       </p>
                     </div>
@@ -537,6 +672,43 @@ const Home = () => {
 
                   <a
                     href="https://github.com/JEELGANDHI21/FSD_EVENT_MANAGEMENT"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute right-1 bottom-1 md:bottom-4 md:right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  >
+                    <div className="w-[87px] h-[24px] md:w-[102.78px] md:h-[33px] px-[13.17px] py-[6.59px] bg-[#fd8439] rounded-tl-sm rounded-tr-[19.76px] rounded-bl-[19.76px] rounded-br-[19.76px] shadow-[3.29px_3.29px_8.23px_0px_rgba(240,114,205,0.16)] border-2 border-black flex items-center justify-center">
+                      <span className="text-white md:text-[13.17px] text-[11px] font-medium font-['Inter'] leading-tight">
+                        Source Code
+                      </span>
+                    </div>
+                  </a>
+                </div>
+
+                {/* Project 4 */}
+                <div
+                  className="w-full sm:w-1/2 md:w-1/3 lg:w-2/5 p-[16.19px] bg-[#2a2a2a] rounded-md flex flex-col justify-start items-center gap-[16.19px] group relative transition-all duration-300
+  hover:-translate-y-2
+  hover:shadow-2xl
+  hover:shadow-[#fd8439]/40
+  border border-[#fd8439]/30"
+                >
+                  <Image
+                    className="md:w-[350px] md:h-[200.81px] w-[266px] h-[159.81px] rounded-[5.15px] shadow-[0px_2.94px_0px_0px_rgba(253,132,57,1.00)] border-2"
+                    src={RESUMATEAI}
+                    alt="Project4"
+                  />
+                  <div className="flex justify-between items-center w-full px-4">
+                    <div className="text-white md:text-xl text-lg font-semibold leading-tight">
+                      ResuMateAI
+                      <br />
+                      <p className="text-sm text-cyan-400 mt-1">
+                        Tech Stack : Python, Google-GenerativeAI
+                      </p>
+                    </div>
+                  </div>
+
+                  <a
+                    href="https://github.com/JEELGANDHI21/ResuMateAI"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="absolute right-1 bottom-1 md:bottom-4 md:right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -561,48 +733,71 @@ const Home = () => {
             </h1>
             <hr className="w-1/3 md:w-1/4 border-t-2 border-[#fd8439] mb-6 mx-auto rounded-lg transition-all duration-300 hover:border-[#fd8439]" />
             {/* Borders */}
-            <div className="hidden md:block absolute inset-0 w-full h-full pointer-events-none">
-              {/* Left Vertical Border (Intersects Top & Bottom) */}
-              <div className="absolute -top-2 md:-top-7 left-[20%] bottom-0 w-0 md:h-[475px] h-[425px] border-l-2 border-[#fd8439]"></div>
-
-              {/* Right Vertical Border (Intersects Top & Bottom) */}
-              <div className="absolute md:-top-7 right-[20%] bottom-0 w-0 md:h-[475px] h-[375px] border-l-2 border-[#fd8439]"></div>
-
-              {/* Top Horizontal Border (Intersects Left & Right) */}
-              <div className="absolute top-0 left-[15%] w-[70%] border-t-2 border-[#fd8439]"></div>
-
-              {/* Bottom Horizontal Border (Intersects Left & Right) */}
-              <div className="absolute bottom-0 left-[15%] w-[70%] border-t-2 border-[#fd8439]"></div>
-            </div>
 
             {/* Certifications List */}
             <div className="md:mt-6 mt-4 flex flex-col gap-6 md:ml-12 ml-3 w-full max-w-[850px]">
               {/* Item 1 */}
-              <div className="flex flex-wrap sm:flex-nowrap items-center gap-4">
-                <div className="md:px-6 md:py-3 px-2 py-1 bg-[#fd8439] rounded-md border-2 border-white text-center text-black text- sm:text-4xl font-normal font-['Handlee']  md:ml-20">
+              <div
+                className="
+  flex flex-wrap sm:flex-nowrap items-center gap-4
+  bg-[#1f1f1f]
+  rounded-xl p-4
+  border border-[#fd8439]/30
+  transition-all duration-300
+  hover:-translate-y-1
+  hover:shadow-xl hover:shadow-[#fd8439]/30
+"
+              >
+                <div
+                  className="
+    min-w-[42px] h-[42px] md:min-w-[60px] md:h-[60px]
+    flex items-center justify-center
+    bg-[#fd8439]
+    rounded-full border-2 border-black
+    text-black text-xl md:text-3xl font-bold shadow-md
+  "
+                >
                   1
                 </div>
+
                 <div>
-                  <div className="text-sm sm:text-xl font-normal text-white">
+                  <div className="text-sm sm:text-xl font-semibold text-white">
                     <a
-                      href="https://www.credly.com/badges/5bc62b83-9f5c-4cce-b789-a5ddc95ff1c9/public_url"
+                      href="..."
                       target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-[#fd8439]"
+                      className="hover:text-[#fd8439] transition-colors duration-300"
                     >
                       Machine Learning Foundations 🔗
                     </a>
                   </div>
-                  <div className="text-xs sm:text-lg text-gray-300 mt-2">
+
+                  <div className="text-xs sm:text-lg text-gray-400 mt-1">
                     AWS Academy
                   </div>
-                  
                 </div>
               </div>
 
               {/* Item 2 */}
-              <div className="flex flex-wrap sm:flex-nowrap items-center gap-4 ">
-                <div className="md:px-6 md:py-3 px-2 py-1 bg-[#fd8439] rounded-md border-2 border-white text-center text-black text-base sm:text-4xl font-normal font-['Handlee']  md:ml-20">
+              <div
+                className="
+  flex flex-wrap sm:flex-nowrap items-center gap-4
+  bg-[#1f1f1f]
+  rounded-xl p-4
+  border border-[#fd8439]/30
+  transition-all duration-300
+  hover:-translate-y-1
+  hover:shadow-xl hover:shadow-[#fd8439]/30
+"
+              >
+                <div
+                  className="
+    min-w-[42px] h-[42px] md:min-w-[60px] md:h-[60px]
+    flex items-center justify-center
+    bg-[#fd8439]
+    rounded-full border-2 border-black
+    text-black text-xl md:text-3xl font-bold shadow-md
+  "
+                >
                   2
                 </div>
                 <div>
@@ -623,8 +818,26 @@ const Home = () => {
               </div>
 
               {/* Item 3 */}
-              <div className="flex flex-wrap sm:flex-nowrap items-center gap-4">
-                <div className="md:px-6 md:py-3 px-2 py-1 bg-[#fd8439] rounded-md border-2 border-white  text-center text-black text-base sm:text-4xl font-normal font-['Handlee']  md:ml-20">
+              <div
+                className="
+  flex flex-wrap sm:flex-nowrap items-center gap-4
+  bg-[#1f1f1f]
+  rounded-xl p-4
+  border border-[#fd8439]/30
+  transition-all duration-300
+  hover:-translate-y-1
+  hover:shadow-xl hover:shadow-[#fd8439]/30
+"
+              >
+                <div
+                  className="
+    min-w-[42px] h-[42px] md:min-w-[60px] md:h-[60px]
+    flex items-center justify-center
+    bg-[#fd8439]
+    rounded-full border-2 border-black
+    text-black text-xl md:text-3xl font-bold shadow-md
+  "
+                >
                   3
                 </div>
                 <div>
@@ -635,7 +848,7 @@ const Home = () => {
                       rel="noopener noreferrer"
                       className="hover:text-[#fd8439]"
                     >
-                       Web Development Bootcamp 🔗
+                      Web Development Bootcamp 🔗
                     </a>
                   </div>
                   <div className="text-xs sm:text-lg text-gray-300 mt-2">
